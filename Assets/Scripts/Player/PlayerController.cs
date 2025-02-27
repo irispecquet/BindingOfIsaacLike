@@ -1,4 +1,3 @@
-using System;
 using DefaultNamespace;
 using TMPro;
 using UnityEngine;
@@ -22,7 +21,6 @@ public class PlayerController : MonoBehaviour
     public PlayerIdleState IdleState => _idleState;
     public PlayerWalkState WalkState => _walkState;
     public Animator2D Animator => _animator2D;
-
 
     private PlayerIdleState _idleState;
     private PlayerWalkState _walkState;
