@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6240733073722a4a84249911ee84952, type: 3}
+  m_Name: Player_Walk_Down
+  m_EditorClassIdentifier: 
+  <AnimationName>k__BackingField: WalkDown
+  <Sprites>k__BackingField:
+  - {fileID: -1660725934, guid: 56207f577985e0242bc9d72596346ee2, type: 3}
+  - {fileID: 1466504044, guid: 56207f577985e0242bc9d72596346ee2, type: 3}
+  - {fileID: 94766010, guid: 56207f577985e0242bc9d72596346ee2, type: 3}
+  - {fileID: 657286099, guid: 56207f577985e0242bc9d72596346ee2, type: 3}
+  - {fileID: 901466087, guid: 56207f577985e0242bc9d72596346ee2, type: 3}
+  <FramePerSeconds>k__BackingField: 12
+  <AnimationType>k__BackingField: 0
