@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6240733073722a4a84249911ee84952, type: 3}
-  m_Name: Player_Idle
+  m_Script: {fileID: 11500000, guid: 14d30c8bfe1f4d64e83c1b9db9a9ad27, type: 3}
+  m_Name: Isaac_Walk_Idle
   m_EditorClassIdentifier: 
   <AnimationName>k__BackingField: Idle
   <Sprites>k__BackingField:
-  - {fileID: -394834811, guid: 9ca24ca4cee78c548bebf85aa683fed2, type: 3}
+  - {fileID: 1782850304, guid: 7c15e9145b7f5034f97ab054f3055b65, type: 3}
   <FramePerSeconds>k__BackingField: 12
   <AnimationType>k__BackingField: 0
