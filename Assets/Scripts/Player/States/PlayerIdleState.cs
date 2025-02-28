@@ -10,7 +10,6 @@ namespace DefaultNamespace
 
         public override void EnterState()
         {
-            _playerController.Animator.PlayStateAnimation("Idle");
         }
 
         public override void UpdateState()

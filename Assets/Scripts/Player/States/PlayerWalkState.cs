@@ -18,14 +18,6 @@ namespace DefaultNamespace
             
             if(currentInputs == Vector2.zero)
                 _playerController.SwitchState(_playerController.IdleState);
-            
-            if(currentInputs.x != 0 && currentInputs.y == 0)
-                _playerController.Animator.PlayStateAnimation("WalkRight");
-            
-            if(currentInputs.y > 0)
-                _playerController.Animator.PlayStateAnimation("WalkUp");
-            else if(currentInputs.y < 0)
-                _playerController.Animator.PlayStateAnimation("WalkDown");
         }
 
         public override void FixedUpdateState()
