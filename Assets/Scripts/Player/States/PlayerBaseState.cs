@@ -1,3 +1,5 @@
+using Player;
+
 namespace DefaultNamespace
 {
     public abstract class PlayerBaseState

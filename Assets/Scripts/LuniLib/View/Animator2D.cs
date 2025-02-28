@@ -78,8 +78,8 @@ namespace View
 
                 if (_defaultAnimation != null)
                     TryPlayAnimation(_defaultAnimation);
-                
-                _currentAnimation = null;
+                else
+                    _currentAnimation = null;
             }
         }
 
