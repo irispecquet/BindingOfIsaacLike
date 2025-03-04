@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +17,8 @@ namespace View
         private float _currentTimer;
         private int _currentSpriteIndex;
         private bool _actionIsPlaying;
+        private Action _onActionCompleted;
+        private string _nextStateName;
         
         private readonly Dictionary<string, AnimationData> _stateDictionary = new();
         private readonly Dictionary<string, AnimationData> _actionDictionary = new();
@@ -70,12 +73,34 @@ namespace View
             }
         }
 
+        public AnimationData GetStateAnimationByName(string name)
+        {
+            return _stateDictionary[name];
+        }
+        
+        public AnimationData GetActionAnimationByName(string name)
+        {
+            return _actionDictionary[name];
+        }
+
         private void StopAction()
         {
             if (_currentAnimation.AnimationType == AnimationType.ACTION)
             {
                 _actionIsPlaying = false;
 
+                if (_onActionCompleted != null)
+                {
+                    _onActionCompleted?.Invoke();
+                    _onActionCompleted = null;
+                }
+
+                if (!string.IsNullOrEmpty(_nextStateName))
+                {
+                    TryPlayAnimation(GetStateAnimationByName(_nextStateName));
+                    return;
+                }
+                    
                 if (_defaultAnimation != null)
                     TryPlayAnimation(_defaultAnimation);
                 else
@@ -96,12 +121,16 @@ namespace View
             TryPlayAnimation(animationData);
         }
 
-        public void PlayActionAnimation(string animationName)
+        public void PlayActionAnimation(string animationName, string nextState = null, Action onComplete = null)
         {
             if (!TryPlayAnimation(animationName, AnimationType.ACTION)) 
                 return;
             
             _actionIsPlaying = true;
+            _nextStateName = nextState;
+            
+            if(onComplete != null)
+                _onActionCompleted = onComplete;
         }
         
         private bool TryPlayAnimation(string animationName, AnimationType animationType)

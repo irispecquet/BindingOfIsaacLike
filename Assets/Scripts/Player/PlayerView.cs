@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using View;
 
@@ -40,8 +41,8 @@ namespace Player
                 _bodyAnimator.PlayStateAnimation("Idle");
                 return;
             }
-            
-            if(_playerInputs.x != 0)
+
+            if (_playerInputs.x != 0)
             {
                 _bodyAnimator.PlayStateAnimation("WalkRight");
                 return;
@@ -53,20 +54,21 @@ namespace Player
 
         private void OnShoot(Vector2 direction)
         {
+            StopAllCoroutines();
+
             if (direction.x != 0)
             {
                 _headSpriteRenderer.flipX = direction.x < 0;
-                _headAnimator.PlayStateAnimation("LookRight");
-                
+                _headAnimator.PlayActionAnimation("BlinkRight", "LookRight");
                 return;
             }
 
             if (direction.y > 0)
-                _headAnimator.PlayStateAnimation("LookUp");
+                _headAnimator.PlayActionAnimation("BlinkUp", "LookUp");
             else if (direction.y < 0)
-                _headAnimator.PlayStateAnimation("LookDown");
+                _headAnimator.PlayActionAnimation("BlinkDown", "LookDown");
         }
-        
+
         private void OnCancelShoot()
         {
             _headAnimator.PlayStateAnimation("Idle");

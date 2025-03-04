@@ -9,5 +9,10 @@ namespace View
         [field: SerializeField] public Sprite[] Sprites { get; private set; }
         [field: SerializeField, Range(0, 120)] public int FramePerSeconds { get; private set; }
         [field: SerializeField] public AnimationType AnimationType { get; private set; }
+
+        public float GetAnimationLength()
+        {
+            return FramePerSeconds * Sprites.Length;
+        }
     }
 }

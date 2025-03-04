@@ -69,6 +69,7 @@ namespace Player
                 {
                     _isShooting = false;
                     CancelShootEvent?.Invoke();
+                    _cooldownTimer = 0;
                 }
             }
         }
