@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Player
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour, IHittable
     {
         [Header("References")] 
         [SerializeField] private InputsHandler _inputs;
@@ -66,7 +66,7 @@ namespace Player
             {
                 if (_cooldownTimer <= 0)
                 {
-                    Instantiate(_bulletPrefab, transform.position, Quaternion.identity).Init(direction);
+                    Instantiate(_bulletPrefab, transform.position, Quaternion.identity).Init(direction, gameObject);
                     ShootEvent?.Invoke(direction);
                     _cooldownTimer = _shootCooldown;
                     _isShooting = true;
@@ -128,6 +128,11 @@ namespace Player
         public Vector2 GetVelocity()
         {
             return _rigidbody.velocity;
+        }
+
+        public void Hit(int damage)
+        {
+            TakeDamage(damage);
         }
     }
 }

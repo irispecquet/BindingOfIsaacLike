@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d30c8bfe1f4d64e83c1b9db9a9ad27, type: 3}
+  m_Name: Clotty_Move
+  m_EditorClassIdentifier: 
+  <AnimationName>k__BackingField: Move
+  <Sprites>k__BackingField:
+  - {fileID: 1352762122, guid: 357f8ce4aa5121a429963372ac4cd222, type: 3}
+  - {fileID: -1229164110, guid: 357f8ce4aa5121a429963372ac4cd222, type: 3}
+  - {fileID: 1033732641, guid: 357f8ce4aa5121a429963372ac4cd222, type: 3}
+  - {fileID: 1900356053, guid: 357f8ce4aa5121a429963372ac4cd222, type: 3}
+  <FramePerSeconds>k__BackingField: 12
+  <AnimationType>k__BackingField: 0

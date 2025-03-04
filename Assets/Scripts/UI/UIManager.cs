@@ -1,4 +1,3 @@
-using DefaultNamespace;
 using Player;
 using UnityEngine;
 
@@ -8,14 +7,17 @@ namespace UI
     {
         [SerializeField] private UILifeManager _uiLifeManager;
         
+        private PlayerController _playerController;
+        
         private void Start()
         {
-            GameManager.Instance.PlayerController.RefreshLife += _uiLifeManager.RefreshHearts;
+            _playerController = GameManager.Instance.PlayerController;
+            _playerController.RefreshLife += _uiLifeManager.RefreshHearts;
         }
 
         protected void OnDestroy()
         {
-            GameManager.Instance.PlayerController.RefreshLife -= _uiLifeManager.RefreshHearts;
+            _playerController.RefreshLife -= _uiLifeManager.RefreshHearts;
         }
     }
 }

@@ -309,10 +309,11 @@ MonoBehaviour:
   _inputs: {fileID: 0}
   _rigidbody: {fileID: 5596355873088195995}
   _debugStateText: {fileID: 0}
-  _bulletPrefab: {fileID: 3394739996475435280, guid: 07d1c0a59b54b0d4cb52f1153301ed7e, type: 3}
+  _bulletPrefab: {fileID: 4778595488043172221, guid: ddbd1170bd0e87d4fb490a815501dd52, type: 3}
   _speed: 1.4
   _acceleration: 9
   _shootCooldown: 0.7
+  _maxLife: 6
 --- !u!70 &4728342096728136390
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
