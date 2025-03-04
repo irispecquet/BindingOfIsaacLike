@@ -17,8 +17,10 @@ namespace Player
         [SerializeField] private float _speed;
         [SerializeField] private float _acceleration;
         [SerializeField] private float _shootCooldown;
+        [SerializeField] private int _maxLife = 6;
         public event Action<Vector2> ShootEvent;
         public event Action CancelShootEvent;
+        public event Action<int> RefreshLife;
         
         public Vector2 CurrentMoveInputs { get; private set; }
     
@@ -32,6 +34,7 @@ namespace Player
         private float _lastHorizontalInput;
         private float _cooldownTimer;
         private bool _isShooting;
+        private int _currentLife;
 
         private void Awake()
         {
@@ -43,6 +46,7 @@ namespace Player
         {
             SwitchState(IdleState);
             _cooldownTimer = 0;
+            _currentLife = _maxLife;   
         }
 
         private void Update()
@@ -53,6 +57,11 @@ namespace Player
             if (_cooldownTimer > 0)
                 _cooldownTimer -= Time.deltaTime;
 
+            HandleShooting();
+        }
+
+        private void HandleShooting()
+        {
             if (_inputs.IsShooting(out Vector2 direction))
             {
                 if (_cooldownTimer <= 0)
@@ -79,6 +88,20 @@ namespace Player
             _currentState.FixedUpdateState();
         }
 
+        public void TakeDamage(int damage)
+        {
+            SetLife(_currentLife - damage);
+        }
+
+        private void SetLife(int life)
+        {
+            _currentLife = life;
+            RefreshLife?.Invoke(_currentLife);
+
+            if (_currentLife <= 0)
+                _inputs.Disable();
+        }
+
         public void Move()
         {
             Vector2 targetVelocity = CurrentMoveInputs.normalized * _speed;
@@ -100,6 +123,11 @@ namespace Player
             _currentState.EnterState();
         
             _debugStateText.text = _currentState.ToString();
+        }
+
+        public Vector2 GetVelocity()
+        {
+            return _rigidbody.velocity;
         }
     }
 }

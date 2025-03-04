@@ -16,6 +16,5 @@ MonoBehaviour:
   <Sprites>k__BackingField:
   - {fileID: 21300000, guid: e7a9b397823253c419e84a6414f2470f, type: 3}
   - {fileID: 21300000, guid: e7a9b397823253c419e84a6414f2470f, type: 3}
-  - {fileID: 21300000, guid: e7a9b397823253c419e84a6414f2470f, type: 3}
   <FramePerSeconds>k__BackingField: 12
   <AnimationType>k__BackingField: 1

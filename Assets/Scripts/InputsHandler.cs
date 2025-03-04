@@ -42,6 +42,11 @@ public class InputsHandler : MonoBehaviour
         return _isShooting;
     }
 
+    public void Disable()
+    {
+        _playerInputs.Disable();
+    }
+
     private void OnDisable()
     {
         _playerInputs.Disable();

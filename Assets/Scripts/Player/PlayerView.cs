@@ -15,6 +15,7 @@ namespace Player
 
         private Vector2 _playerInputs;
         private float _lastHorizontalInput;
+        private bool _isShooting;
 
         private void Start()
         {
@@ -30,6 +31,9 @@ namespace Player
                 _lastHorizontalInput = _playerInputs.x;
 
             HandleBodyAnimations();
+            
+            if(!_isShooting)
+                _headAnimator.PlayStateAnimation("Idle");
         }
 
         private void HandleBodyAnimations()
@@ -54,8 +58,8 @@ namespace Player
 
         private void OnShoot(Vector2 direction)
         {
-            StopAllCoroutines();
-
+            _isShooting = true;
+            
             if (direction.x != 0)
             {
                 _headSpriteRenderer.flipX = direction.x < 0;
@@ -71,7 +75,7 @@ namespace Player
 
         private void OnCancelShoot()
         {
-            _headAnimator.PlayStateAnimation("Idle");
+            _isShooting = false;
         }
     }
 }

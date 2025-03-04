@@ -137,10 +137,21 @@ namespace View
         {
             AnimationData animationData = null;
 
+            
             if (animationType == AnimationType.STATE)
+            {
+                if (_actionIsPlaying)
+                    return false;
+                
+                if (_currentAnimation == _stateDictionary[animationName])
+                    return false;
+                
                 animationData = _stateDictionary[animationName];
+            }
             else if (animationType == AnimationType.ACTION)
+            {
                 animationData = _actionDictionary[animationName];
+            }
             
             return TryPlayAnimation(animationData);
         }
@@ -149,18 +160,6 @@ namespace View
         {
             if (animationData == null)
                 return false;
-            
-            if (animationData.AnimationType == AnimationType.STATE)
-            {
-                if (_actionIsPlaying)
-                {
-                    Debug.LogWarning($"Action is already running.");
-                    return false;
-                }
-
-                if (_currentAnimation == animationData)
-                    return false;
-            }
             
             SwitchAnimation(animationData);
             

@@ -1,3 +1,4 @@
+using System;
 using Player;
 using UnityEngine;
 
@@ -15,9 +16,9 @@ namespace DefaultNamespace
 
         public override void UpdateState()
         {
-            Vector2 currentInputs = _playerController.CurrentMoveInputs;
+            float magnitude = _playerController.GetVelocity().magnitude;
             
-            if(currentInputs == Vector2.zero)
+            if (magnitude < 0.02f)
                 _playerController.SwitchState(_playerController.IdleState);
         }
 
