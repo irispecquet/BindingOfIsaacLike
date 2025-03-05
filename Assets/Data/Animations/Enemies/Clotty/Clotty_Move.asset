@@ -18,5 +18,12 @@ MonoBehaviour:
   - {fileID: -1229164110, guid: 357f8ce4aa5121a429963372ac4cd222, type: 3}
   - {fileID: 1033732641, guid: 357f8ce4aa5121a429963372ac4cd222, type: 3}
   - {fileID: 1900356053, guid: 357f8ce4aa5121a429963372ac4cd222, type: 3}
+  - {fileID: -440429626, guid: 357f8ce4aa5121a429963372ac4cd222, type: 3}
+  - {fileID: 1175844053, guid: 357f8ce4aa5121a429963372ac4cd222, type: 3}
+  - {fileID: -1472264502, guid: 357f8ce4aa5121a429963372ac4cd222, type: 3}
+  - {fileID: -2092961297, guid: 357f8ce4aa5121a429963372ac4cd222, type: 3}
+  - {fileID: -1158397529, guid: 357f8ce4aa5121a429963372ac4cd222, type: 3}
+  - {fileID: 1192119773, guid: 357f8ce4aa5121a429963372ac4cd222, type: 3}
+  - {fileID: 821288284, guid: 357f8ce4aa5121a429963372ac4cd222, type: 3}
   <FramePerSeconds>k__BackingField: 12
   <AnimationType>k__BackingField: 0

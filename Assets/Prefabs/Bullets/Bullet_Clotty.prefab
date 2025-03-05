@@ -59,7 +59,7 @@ PrefabInstance:
     - target: {fileID: 6997876376539768574, guid: ddbd1170bd0e87d4fb490a815501dd52, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 398048244, guid: 113db59d802034a4fa77e5413b874b8c, type: 3}
+      objectReference: {fileID: 622592804, guid: 113db59d802034a4fa77e5413b874b8c, type: 3}
     - target: {fileID: 8344006454955305559, guid: ddbd1170bd0e87d4fb490a815501dd52, type: 3}
       propertyPath: m_Name
       value: Bullet_Clotty

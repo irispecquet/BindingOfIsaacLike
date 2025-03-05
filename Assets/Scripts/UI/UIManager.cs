@@ -1,4 +1,5 @@
-using Player;
+using Entities.Player;
+using Managers;
 using UnityEngine;
 
 namespace UI

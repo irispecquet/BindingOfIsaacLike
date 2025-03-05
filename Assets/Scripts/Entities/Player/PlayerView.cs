@@ -1,9 +1,7 @@
-using System;
-using System.Collections;
+using LuniLib.View;
 using UnityEngine;
-using View;
 
-namespace Player
+namespace Entities.Player
 {
     public class PlayerView : MonoBehaviour
     {

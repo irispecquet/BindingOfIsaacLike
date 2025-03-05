@@ -1,6 +1,4 @@
-using UnityEngine;
-
-namespace Lib
+namespace LuniLib.UnityUtils
 {
     public static class SystemInitializer
     {

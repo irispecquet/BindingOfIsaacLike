@@ -1,11 +1,13 @@
 using System;
-using DefaultNamespace;
+using Entities.Player.States;
+using Interfaces;
+using Managers;
 using TMPro;
 using UnityEngine;
 
-namespace Player
+namespace Entities.Player
 {
-    public class PlayerController : MonoBehaviour, IHittable
+    public class PlayerController : Entity, IHittable
     {
         [Header("References")] 
         [SerializeField] private InputsHandler _inputs;
@@ -17,7 +19,6 @@ namespace Player
         [SerializeField] private float _speed;
         [SerializeField] private float _acceleration;
         [SerializeField] private float _shootCooldown;
-        [SerializeField] private int _maxLife = 6;
         public event Action<Vector2> ShootEvent;
         public event Action CancelShootEvent;
         public event Action<int> RefreshLife;
@@ -34,7 +35,8 @@ namespace Player
         private float _lastHorizontalInput;
         private float _cooldownTimer;
         private bool _isShooting;
-        private int _currentLife;
+
+        #region UNITY METHODS
 
         private void Awake()
         {
@@ -42,11 +44,12 @@ namespace Player
             _walkState = new PlayerWalkState(this);
         }
 
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
+
             SwitchState(IdleState);
             _cooldownTimer = 0;
-            _currentLife = _maxLife;   
         }
 
         private void Update()
@@ -59,6 +62,13 @@ namespace Player
 
             HandleShooting();
         }
+
+        private void FixedUpdate()
+        {
+            _currentState.FixedUpdateState();
+        }
+
+        #endregion // UNITY METHODS
 
         private void HandleShooting()
         {
@@ -82,26 +92,7 @@ namespace Player
                 }
             }
         }
-
-        private void FixedUpdate()
-        {
-            _currentState.FixedUpdateState();
-        }
-
-        public void TakeDamage(int damage)
-        {
-            SetLife(_currentLife - damage);
-        }
-
-        private void SetLife(int life)
-        {
-            _currentLife = life;
-            RefreshLife?.Invoke(_currentLife);
-
-            if (_currentLife <= 0)
-                _inputs.Disable();
-        }
-
+        
         public void Move()
         {
             Vector2 targetVelocity = CurrentMoveInputs.normalized * _speed;
@@ -130,9 +121,16 @@ namespace Player
             return _rigidbody.velocity;
         }
 
-        public void Hit(int damage)
+        protected override void TakeDamage(int damage)
         {
-            TakeDamage(damage);
+            base.TakeDamage(damage);
+            RefreshLife?.Invoke(_currentLife);
+        }
+
+        protected override void Die()
+        {
+            base.Die();
+            _inputs.Disable();
         }
     }
 }

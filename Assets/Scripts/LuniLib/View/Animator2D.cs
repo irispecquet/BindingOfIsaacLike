@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace View
+namespace LuniLib.View
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class Animator2D : MonoBehaviour

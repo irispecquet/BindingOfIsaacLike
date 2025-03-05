@@ -1,4 +1,5 @@
 using System;
+using Interfaces;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour, IHitter

@@ -1,60 +1,33 @@
+using DG.Tweening;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-namespace Enemies
+namespace Entities.Enemies
 {
-    public class Clotty : Enemy
+    public abstract class Wonderer : Enemy
     {
         [Header("References")]
         [SerializeField] private LayerMask _wallLayer;
-        [SerializeField] private Bullet _bulletPrefab;
         
         [Header("Values")]
         [SerializeField] private float _minDirectionChangeCooldown;
         [SerializeField] private float _maxDirectionChangeCooldown;
-        [SerializeField] private float _shootCooldown;
         [SerializeField] private float _rayRadius;
         [SerializeField] private float _speed;
+        [SerializeField] private float _rotationSpeed = 0.4f;
         
         private float _changeDirectionCooldown;
-        private float _currentShootCooldown;
+        private Tween _rotateTween;
 
         protected override void Start()
         {
             base.Start();
             _changeDirectionCooldown = 0;
-            _currentShootCooldown = 0;
         }
-
-        private void Update()
+        
+        protected virtual void Update()
         {
             WanderAround();
             Move();
-            Shoot();
-        }
-
-        private void Shoot()
-        {
-            _currentShootCooldown -= Time.deltaTime;
-
-            if (_currentShootCooldown <= 0)
-            {
-                ShootBullet();
-                _currentShootCooldown = _shootCooldown;
-            }
-        }
-
-        private void ShootBullet()
-        {
-            Vector2[] allCardinalDirections = GetAllCardinalDirections();
-            
-            foreach (Vector2 dir in allCardinalDirections)
-                Instantiate(_bulletPrefab, transform.position, Quaternion.identity).Init(dir, gameObject);
-        }
-
-        private Vector2[] GetAllCardinalDirections()
-        {
-            return new []{Vector2.up, Vector2.down, Vector2.left, Vector2.right};
         }
 
         private void Move()
@@ -86,8 +59,10 @@ namespace Enemies
         private void ChangeDirection()
         {
             float newAngle = Random.Range(-90f, 90f);
-            transform.Rotate(0, 0, newAngle);
-                
+
+            _rotateTween?.Kill();
+            _rotateTween = transform.DORotate(new Vector3(0, 0, newAngle), _rotationSpeed);
+
             RestartDirectionCooldown();
         }
 
@@ -95,8 +70,8 @@ namespace Enemies
         {
             _changeDirectionCooldown = Random.Range(_minDirectionChangeCooldown, _maxDirectionChangeCooldown);
         }
-
-        private void OnDrawGizmosSelected()
+        
+        protected virtual void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, _rayRadius);

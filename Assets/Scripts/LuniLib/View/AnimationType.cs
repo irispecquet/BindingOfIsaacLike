@@ -1,4 +1,4 @@
-﻿namespace View
+﻿namespace LuniLib.View
 {
     public enum AnimationType
     {

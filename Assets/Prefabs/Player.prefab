@@ -306,6 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279642f6973fe354b9d160693a6cff08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _initLife: 6
   _inputs: {fileID: 0}
   _rigidbody: {fileID: 5596355873088195995}
   _debugStateText: {fileID: 0}
@@ -313,7 +314,6 @@ MonoBehaviour:
   _speed: 1.4
   _acceleration: 9
   _shootCooldown: 0.7
-  _maxLife: 6
 --- !u!70 &4728342096728136390
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

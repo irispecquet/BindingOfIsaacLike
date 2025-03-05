@@ -1,14 +1,12 @@
+using Interfaces;
 using UnityEngine;
-using View;
 
-namespace Enemies
+namespace Entities
 {
-    public abstract class Enemy : MonoBehaviour, IHittable
+    public abstract class Entity : MonoBehaviour, IHittable
     {
-        [SerializeField] protected SpriteRenderer _spriteRenderer;
-        [SerializeField] protected Transform _selfTransform;
         [SerializeField] protected int _initLife;
-        
+
         protected int _currentLife;
 
         protected virtual void Start()
@@ -16,17 +14,21 @@ namespace Enemies
             _currentLife = _initLife;
         }
 
-        private void TakeDamage(int damage)
+        protected virtual void TakeDamage(int damage)
         {
-            _currentLife -= damage;
+            SetLife(_currentLife - damage);
 
             if (_currentLife <= 0)
                 Die();
         }
 
-        private void Die()
+        private void SetLife(int value)
         {
-            Destroy(_selfTransform.gameObject);
+            _currentLife = value;
+        }
+
+        protected virtual void Die()
+        {
         }
 
         public void Hit(int damage)

@@ -1,8 +1,6 @@
-using System;
-using Player;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Entities.Player.States
 {
     public class PlayerWalkState : PlayerBaseState
     {

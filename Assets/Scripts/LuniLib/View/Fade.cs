@@ -3,7 +3,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace LuniLib_main.View
+namespace LuniLib.View
 {
     public class Fade : MonoBehaviour
     {

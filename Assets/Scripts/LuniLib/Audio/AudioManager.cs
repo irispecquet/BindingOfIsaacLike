@@ -1,9 +1,8 @@
-using System;
 using System.Collections.Generic;
 using LuniLib.SingletonClassBase;
 using UnityEngine;
 
-namespace Audio
+namespace LuniLib.Audio
 {
     public class AudioManager : Singleton<AudioManager>
     {

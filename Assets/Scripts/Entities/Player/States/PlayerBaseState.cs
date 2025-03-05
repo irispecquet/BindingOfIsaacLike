@@ -1,6 +1,4 @@
-using Player;
-
-namespace DefaultNamespace
+namespace Entities.Player.States
 {
     public abstract class PlayerBaseState
     {
