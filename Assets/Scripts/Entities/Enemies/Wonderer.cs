@@ -1,5 +1,7 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Entities.Enemies
 {
@@ -70,7 +72,12 @@ namespace Entities.Enemies
         {
             _changeDirectionCooldown = Random.Range(_minDirectionChangeCooldown, _maxDirectionChangeCooldown);
         }
-        
+
+        private void OnDestroy()
+        {
+            _rotateTween?.Kill();
+        }
+
         protected virtual void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
