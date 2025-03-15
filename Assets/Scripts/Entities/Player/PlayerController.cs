@@ -2,6 +2,7 @@ using System;
 using Entities.Player.States;
 using Interfaces;
 using Managers;
+using Rooms;
 using TMPro;
 using UnityEngine;
 
@@ -24,6 +25,7 @@ namespace Entities.Player
         public event Action<int> RefreshLife;
         
         public Vector2 CurrentMoveInputs { get; private set; }
+        public RoomNode CurrentRoomNode { get; private set; }
     
         public PlayerIdleState IdleState => _idleState;
         public PlayerWalkState WalkState => _walkState;
@@ -50,6 +52,7 @@ namespace Entities.Player
 
             SwitchState(IdleState);
             _cooldownTimer = 0;
+            RefreshCurrentRoomNode();
         }
 
         private void Update()
@@ -97,6 +100,7 @@ namespace Entities.Player
         {
             Vector2 targetVelocity = CurrentMoveInputs.normalized * _speed;
             SetVelocity(targetVelocity, _acceleration * Time.fixedDeltaTime);
+            RefreshCurrentRoomNode();
         }
         
         public void SetVelocity(Vector2 targetVelocity, float acceleration)
@@ -114,6 +118,20 @@ namespace Entities.Player
             _currentState.EnterState();
         
             _debugStateText.text = _currentState.ToString();
+        }
+
+        private void RefreshCurrentRoomNode()
+        {
+            Room room = GameManager.Instance.RoomManager.CurrentRoom;
+
+            foreach (RoomNode node in room.Nodes)
+            {
+                if (node.ContainsPosition(transform.position))
+                {
+                    CurrentRoomNode = node;
+                    break;
+                }
+            }
         }
 
         public Vector2 GetVelocity()

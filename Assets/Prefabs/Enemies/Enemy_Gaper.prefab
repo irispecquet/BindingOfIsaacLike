@@ -222,3 +222,4 @@ MonoBehaviour:
   _selfTransform: {fileID: 5750543385908622444}
   _speed: 0.7
   _bodyAnimator: {fileID: 6494155372444742410}
+  _pathUpdateInterval: 0.6
