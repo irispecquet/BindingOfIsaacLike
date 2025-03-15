@@ -9,6 +9,8 @@ namespace Rooms
         [SerializeField] private Vector2 _roomSize;
         [SerializeField] private Vector2 _nodeSize;
         [SerializeField] private GameObject _nodePrefab;
+        [SerializeField] private GameObject _poopPrefab;
+        [SerializeField] private int _obstacleSpawnChance;
         [SerializeField] private bool _debugNodePosition;
 
         public RoomNode[,] Nodes { get; private set; }
@@ -26,7 +28,7 @@ namespace Rooms
                 {
                     float xPosition = transform.position.x + x * _nodeSize.x;
                     float yPosition = transform.position.y + y * _nodeSize.y;
-                    int randomOccupied = Random.Range(0, 6);
+                    int randomOccupied = Random.Range(0, _obstacleSpawnChance);
                     bool occupied = randomOccupied == 1;
 
                     if (_debugNodePosition)
@@ -35,6 +37,9 @@ namespace Rooms
                         newText.text = $"{x} ; {y}\n{xPosition} ; {yPosition}";
                         newText.color = occupied ? Color.red : Color.cyan;
                     }
+
+                    if (occupied)
+                        Instantiate(_poopPrefab, new Vector3(xPosition, yPosition, 0), Quaternion.identity);
 
                     CreateNode(x, y, new Vector3(xPosition, yPosition, 0), occupied);
                 }
