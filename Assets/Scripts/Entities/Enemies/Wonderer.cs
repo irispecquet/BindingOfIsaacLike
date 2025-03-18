@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 namespace Entities.Enemies
 {
-    public abstract class Wonderer : Enemy
+    public class Wonderer : Enemy
     {
         [Header("References")]
         [SerializeField] private LayerMask _wallLayer;

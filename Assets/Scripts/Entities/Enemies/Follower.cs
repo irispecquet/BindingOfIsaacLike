@@ -1,20 +1,18 @@
 using System;
 using System.Collections.Generic;
 using Entities.Player;
-using LuniLib.View;
 using Managers;
 using Rooms;
 using UnityEngine;
 
 namespace Entities.Enemies
 {
-    public class Gaper : Enemy
+    public abstract class Follower : Enemy
     {
         [SerializeField] private float _speed;
-        [SerializeField] private Animator2D _bodyAnimator;
         [SerializeField] private float _pathUpdateInterval = 1.0f; // Time in seconds between path updates
 
-        private PlayerController _player;
+        protected PlayerController _player;
         private PathFinder _pathFinder;
         private List<RoomNode> _currentPath;
         private int _currentPathIndex;
@@ -22,15 +20,14 @@ namespace Entities.Enemies
 
         protected override void Start()
         {
-            base.Start();
             _pathFinder = new PathFinder();
             _player = GameManager.Instance.PlayerController;
             _currentPath = new List<RoomNode>();
             _currentPathIndex = 0;
             _pathUpdateTimer = _pathUpdateInterval;
         }
-
-        private void Update()
+        
+        public virtual void Update()
         {
             _pathUpdateTimer += Time.deltaTime;
             if (_pathUpdateTimer >= _pathUpdateInterval || _currentPath == null || _currentPathIndex >= _currentPath.Count)
@@ -42,7 +39,6 @@ namespace Entities.Enemies
             if (_currentPath != null && _currentPathIndex < _currentPath.Count)
                 MoveAlongPath();
 
-            UpdateAnimation();
         }
 
         private void UpdatePath()
@@ -71,24 +67,8 @@ namespace Entities.Enemies
                 }
             }
         }
-
-        private void UpdateAnimation()
-        {
-            Vector2 dir = _selfTransform.position - _player.transform.position;
-            dir.Normalize();
-
-            _spriteRenderer.flipX = dir.x > 0;
-
-            if (Math.Abs(dir.x) > 0.5f)
-            {
-                _bodyAnimator.PlayStateAnimation("WalkRight");
-                return;
-            }
-
-            if (Math.Abs(dir.y) > 0.5f)
-                _bodyAnimator.PlayStateAnimation("WalkDown");
-        }
-
+        
+        
         private RoomNode GetCurrentRoomNode()
         {
             Room room = GameManager.Instance.RoomManager.CurrentRoom;

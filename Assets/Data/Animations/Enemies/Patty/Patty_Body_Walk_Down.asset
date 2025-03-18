@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d30c8bfe1f4d64e83c1b9db9a9ad27, type: 3}
+  m_Name: Patty_Body_Walk_Down
+  m_EditorClassIdentifier: 
+  <AnimationName>k__BackingField: WalkDown
+  <Sprites>k__BackingField:
+  - {fileID: 1904625846, guid: f81b2c101333c724a986ffb3d5b368df, type: 3}
+  - {fileID: -1953084609, guid: f81b2c101333c724a986ffb3d5b368df, type: 3}
+  - {fileID: 823812074, guid: f81b2c101333c724a986ffb3d5b368df, type: 3}
+  - {fileID: -1775074187, guid: f81b2c101333c724a986ffb3d5b368df, type: 3}
+  - {fileID: -328362877, guid: f81b2c101333c724a986ffb3d5b368df, type: 3}
+  - {fileID: 606350632, guid: f81b2c101333c724a986ffb3d5b368df, type: 3}
+  - {fileID: 1372739324, guid: f81b2c101333c724a986ffb3d5b368df, type: 3}
+  - {fileID: -888981118, guid: f81b2c101333c724a986ffb3d5b368df, type: 3}
+  - {fileID: -591959317, guid: f81b2c101333c724a986ffb3d5b368df, type: 3}
+  - {fileID: 1331405863, guid: f81b2c101333c724a986ffb3d5b368df, type: 3}
+  - {fileID: -307072283, guid: f81b2c101333c724a986ffb3d5b368df, type: 3}
+  - {fileID: 526921964, guid: f81b2c101333c724a986ffb3d5b368df, type: 3}
+  <FramePerSeconds>k__BackingField: 12
+  <AnimationType>k__BackingField: 0

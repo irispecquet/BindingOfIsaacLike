@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d30c8bfe1f4d64e83c1b9db9a9ad27, type: 3}
+  m_Name: Patty_Head_Idle
+  m_EditorClassIdentifier: 
+  <AnimationName>k__BackingField: Idle
+  <Sprites>k__BackingField:
+  - {fileID: -28779835, guid: 82863da60edfc014a917e9c2165d34e5, type: 3}
+  - {fileID: -2082777550, guid: 82863da60edfc014a917e9c2165d34e5, type: 3}
+  - {fileID: 819276830, guid: 82863da60edfc014a917e9c2165d34e5, type: 3}
+  - {fileID: -988015939, guid: 82863da60edfc014a917e9c2165d34e5, type: 3}
+  - {fileID: -1438884280, guid: 82863da60edfc014a917e9c2165d34e5, type: 3}
+  - {fileID: 749675886, guid: 82863da60edfc014a917e9c2165d34e5, type: 3}
+  <FramePerSeconds>k__BackingField: 12
+  <AnimationType>k__BackingField: 0
