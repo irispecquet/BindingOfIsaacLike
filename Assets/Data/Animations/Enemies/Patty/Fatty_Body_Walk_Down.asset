@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d30c8bfe1f4d64e83c1b9db9a9ad27, type: 3}
+  m_Name: Fatty_Body_Walk_Down
+  m_EditorClassIdentifier: 
+  <AnimationName>k__BackingField: WalkDown
+  <Sprites>k__BackingField:
+  - {fileID: -1728895075, guid: 9ee396b0877d36a4caa82448536d81ba, type: 3}
+  - {fileID: -1640805554, guid: 9ee396b0877d36a4caa82448536d81ba, type: 3}
+  - {fileID: -111918650, guid: 9ee396b0877d36a4caa82448536d81ba, type: 3}
+  - {fileID: -1847918326, guid: 9ee396b0877d36a4caa82448536d81ba, type: 3}
+  - {fileID: -983914772, guid: 9ee396b0877d36a4caa82448536d81ba, type: 3}
+  - {fileID: -1935816031, guid: 9ee396b0877d36a4caa82448536d81ba, type: 3}
+  - {fileID: 1152126154, guid: 9ee396b0877d36a4caa82448536d81ba, type: 3}
+  - {fileID: 1744207551, guid: 9ee396b0877d36a4caa82448536d81ba, type: 3}
+  - {fileID: -967948191, guid: 9ee396b0877d36a4caa82448536d81ba, type: 3}
+  - {fileID: 1812397076, guid: 9ee396b0877d36a4caa82448536d81ba, type: 3}
+  - {fileID: 1321760264, guid: 9ee396b0877d36a4caa82448536d81ba, type: 3}
+  - {fileID: -1942749640, guid: 9ee396b0877d36a4caa82448536d81ba, type: 3}
+  <FramePerSeconds>k__BackingField: 12
+  <AnimationType>k__BackingField: 0

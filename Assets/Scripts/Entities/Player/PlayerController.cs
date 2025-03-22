@@ -79,7 +79,7 @@ namespace Entities.Player
             {
                 if (_cooldownTimer <= 0)
                 {
-                    Instantiate(_bulletPrefab, transform.position, Quaternion.identity).Init(direction, gameObject);
+                    Instantiate(_bulletPrefab, transform.position, Quaternion.identity).Init(direction, gameObject, true);
                     ShootEvent?.Invoke(direction);
                     _cooldownTimer = _shootCooldown;
                     _isShooting = true;

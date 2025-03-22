@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1f03008f4b4ddb147b2206c301a0f187
+guid: 9ee396b0877d36a4caa82448536d81ba
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,30 +93,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Patty_Walk_Right_0
+      name: Fatty_Walk_Down_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 30
+        y: 47
         width: 64
-        height: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48b76f98adfdb2c43adcfeb0bf237055
-      internalID: 364817354
+      spriteID: 63540563e75a2d442977b3be7bb72274
+      internalID: -1728895075
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Patty_Walk_Right_1
+      name: Fatty_Walk_Down_1
       rect:
         serializedVersion: 2
         x: 64
-        y: 30
+        y: 47
         width: 64
-        height: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c0195c279c635a41a9d9a1306180f5d
-      internalID: -1234245214
+      spriteID: a553266f351df8c40b65c5ad719c139c
+      internalID: -1640805554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Patty_Walk_Right_2
+      name: Fatty_Walk_Down_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 30
+        y: 47
         width: 64
-        height: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f669d5f3230e19241bb1e73a8999deee
-      internalID: 428470628
+      spriteID: 5483f9c956ffd9a44af3afd363903a63
+      internalID: -111918650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Patty_Walk_Right_3
+      name: Fatty_Walk_Down_3
       rect:
         serializedVersion: 2
         x: 192
-        y: 30
+        y: 47
         width: 64
-        height: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2d5fb4c5f0c5c740b9a7b9edf079f0b
-      internalID: 1562097009
+      spriteID: d1df1d31c39aaec40852ab43788a2e62
+      internalID: -1847918326
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Patty_Walk_Right_4
+      name: Fatty_Walk_Down_4
       rect:
         serializedVersion: 2
         x: 256
-        y: 30
+        y: 47
         width: 64
-        height: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7591c4465d27ba34182eb3bc44a4163e
-      internalID: -21153857
+      spriteID: 26b628eb521a5734f8d2412e0451ee88
+      internalID: -983914772
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Patty_Walk_Right_5
+      name: Fatty_Walk_Down_5
       rect:
         serializedVersion: 2
         x: 320
-        y: 30
+        y: 47
         width: 64
-        height: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1f98526af46b224f9050a8375948f60
-      internalID: -2025865295
+      spriteID: 1022437f775b7a2458c4ffb8aec0b358
+      internalID: -1935816031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Patty_Walk_Right_6
+      name: Fatty_Walk_Down_6
       rect:
         serializedVersion: 2
         x: 384
-        y: 30
+        y: 47
         width: 64
-        height: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c4353bac5e08f14eb82d3b3ef8b7104
-      internalID: 1653946035
+      spriteID: 244887927e7f2264b81e45a30a96264b
+      internalID: 1152126154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Patty_Walk_Right_7
+      name: Fatty_Walk_Down_7
       rect:
         serializedVersion: 2
         x: 448
-        y: 30
+        y: 47
         width: 64
-        height: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbda52fc985088b44a9c87fdf508329b
-      internalID: 2045828045
+      spriteID: 257e81a9bfd8cf44f9e1e7ba528d1cc6
+      internalID: 1744207551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Patty_Walk_Right_8
+      name: Fatty_Walk_Down_8
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
-        height: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +279,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c98c52d53edefa4fa2a79810495a511
-      internalID: -2059020080
+      spriteID: eaa5d0a8ee03efd40b01dd6692ef360d
+      internalID: -967948191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Patty_Walk_Right_9
+      name: Fatty_Walk_Down_9
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
-        height: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,20 +300,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2628e8a94260422439eab2e3830e344c
-      internalID: -1327393943
+      spriteID: 8aa62b72ee7b45147ad9a44316e36f33
+      internalID: 1812397076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Patty_Walk_Right_10
+      name: Fatty_Walk_Down_10
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 64
-        height: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,20 +321,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9732e5e9c39e1c7448fd9b1d56b8a691
-      internalID: -991504088
+      spriteID: 1121e02a049ad1d47870d4d6e6bf3ca2
+      internalID: 1321760264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Patty_Walk_Right_11
+      name: Fatty_Walk_Down_11
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 64
-        height: 30
+        height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,8 +342,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e67fae11cdd5c164b8a9cfa9da75b57f
-      internalID: 1699399320
+      spriteID: bdb16964cd76e3044989b718f6c2f6b8
+      internalID: -1942749640
       vertices: []
       indices: 
       edges: []
@@ -372,18 +359,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Patty_Walk_Right_0: 364817354
-      Patty_Walk_Right_1: -1234245214
-      Patty_Walk_Right_10: -991504088
-      Patty_Walk_Right_11: 1699399320
-      Patty_Walk_Right_2: 428470628
-      Patty_Walk_Right_3: 1562097009
-      Patty_Walk_Right_4: -21153857
-      Patty_Walk_Right_5: -2025865295
-      Patty_Walk_Right_6: 1653946035
-      Patty_Walk_Right_7: 2045828045
-      Patty_Walk_Right_8: -2059020080
-      Patty_Walk_Right_9: -1327393943
+      Fatty_Walk_Down_0: -1728895075
+      Fatty_Walk_Down_1: -1640805554
+      Fatty_Walk_Down_10: 1321760264
+      Fatty_Walk_Down_11: -1942749640
+      Fatty_Walk_Down_2: -111918650
+      Fatty_Walk_Down_3: -1847918326
+      Fatty_Walk_Down_4: -983914772
+      Fatty_Walk_Down_5: -1935816031
+      Fatty_Walk_Down_6: 1152126154
+      Fatty_Walk_Down_7: 1744207551
+      Fatty_Walk_Down_8: -967948191
+      Fatty_Walk_Down_9: 1812397076
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

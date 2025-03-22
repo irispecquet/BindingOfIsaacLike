@@ -1,9 +1,5 @@
 using System;
-using System.Collections.Generic;
-using Entities.Player;
 using LuniLib.View;
-using Managers;
-using Rooms;
 using UnityEngine;
 
 namespace Entities.Enemies

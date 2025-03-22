@@ -39,7 +39,7 @@ namespace Entities.Enemies
             Vector2[] allCardinalDirections = GetAllCardinalDirections();
 
             foreach (Vector2 dir in allCardinalDirections)
-                Instantiate(_bulletPrefab, transform.position, Quaternion.identity).Init(dir, gameObject);
+                Instantiate(_bulletPrefab, transform.position, Quaternion.identity).Init(dir, gameObject, true);
         }
 
         private Vector2[] GetAllCardinalDirections()

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4575956316299333938}
   - component: {fileID: 7289081410800389300}
   - component: {fileID: 7177969830845784532}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7368630354795593406}
   - component: {fileID: 4173548451393636599}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Behaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8524349674273236658}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

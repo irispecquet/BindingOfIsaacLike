@@ -1,21 +1,34 @@
 using System.Collections.Generic;
+using Entities.Enemies;
+using LuniLib.Extensions;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Rooms
 {
     public class Room : MonoBehaviour
     {
+        [Header("Room Properties")]
         [SerializeField] private Vector2 _roomSize;
         [SerializeField] private Vector2 _nodeSize;
         [SerializeField] private GameObject _nodePrefab;
         [SerializeField] private GameObject _poopPrefab;
         [SerializeField] private int _obstacleSpawnChance;
+        [SerializeField] private int _enemySpawnChance;
         [SerializeField] private bool _debugNodePosition;
+        
+        [Header("Enemies")]
+        [SerializeField] private GameObject[] _enemyTypePool; 
 
         public RoomNode[,] Nodes { get; private set; }
 
         private void Awake()
+        {
+            SetRoom();
+        }
+
+        private void SetRoom()
         {
             int roomSizeX = Mathf.RoundToInt(_roomSize.x / _nodeSize.x);
             int roomSizeY = Mathf.RoundToInt(_roomSize.y / _nodeSize.y);
@@ -28,18 +41,28 @@ namespace Rooms
                 {
                     float xPosition = transform.position.x + x * _nodeSize.x;
                     float yPosition = transform.position.y + y * _nodeSize.y;
-                    int randomOccupied = Random.Range(0, _obstacleSpawnChance);
-                    bool occupied = randomOccupied == 1;
+                    
+                    int randomOccupied = Random.Range(0, 100);
+                    int randomEnemy = Random.Range(0, 100);
+                    
+                    bool occupied = randomOccupied < _obstacleSpawnChance;
+                    bool enemy = randomEnemy < _enemySpawnChance && !occupied;
 
                     if (_debugNodePosition)
                     {
                         TMP_Text newText = Instantiate(_nodePrefab, new Vector3(xPosition, yPosition, 0), Quaternion.identity).GetComponentInChildren<TMP_Text>();
-                        newText.text = $"{x} ; {y}\n{xPosition} ; {yPosition}";
-                        newText.color = occupied ? Color.red : Color.cyan;
+                        newText.text = $"{x} ; {y}\n{xPosition.ToString("{0.0}")} {yPosition.ToString("{0.0}")}";
+                        newText.color = occupied || enemy ? Color.red : Color.cyan;
                     }
 
                     if (occupied)
                         Instantiate(_poopPrefab, new Vector3(xPosition, yPosition, 0), Quaternion.identity);
+
+                    if (enemy)
+                    {
+                        GameObject newEnemy = _enemyTypePool.RandomElement();
+                        Instantiate(newEnemy, new Vector3(xPosition, yPosition, 0), Quaternion.identity);
+                    }
 
                     CreateNode(x, y, new Vector3(xPosition, yPosition, 0), occupied);
                 }

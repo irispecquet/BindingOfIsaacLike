@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4778595488043172221, guid: ddbd1170bd0e87d4fb490a815501dd52, type: 3}
       propertyPath: _speed
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4778595488043172221, guid: ddbd1170bd0e87d4fb490a815501dd52, type: 3}
       propertyPath: _damage
@@ -62,7 +62,11 @@ PrefabInstance:
       objectReference: {fileID: 622592804, guid: 113db59d802034a4fa77e5413b874b8c, type: 3}
     - target: {fileID: 8344006454955305559, guid: ddbd1170bd0e87d4fb490a815501dd52, type: 3}
       propertyPath: m_Name
-      value: Bullet_Clotty
+      value: Bullet_Blood
+      objectReference: {fileID: 0}
+    - target: {fileID: 8344006454955305559, guid: ddbd1170bd0e87d4fb490a815501dd52, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Entities.Enemies
 {
-    public abstract class Enemy : Entity
+    public class Enemy : Entity
     {
         [SerializeField] protected SpriteRenderer _spriteRenderer;
         [SerializeField] protected Transform _selfTransform;

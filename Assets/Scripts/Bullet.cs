@@ -10,10 +10,13 @@ public class Bullet : MonoBehaviour, IHitter
     private GameObject _owner;
     private Vector2 _direction;
     
-    public void Init(Vector2 direction, GameObject owner)
+    public void Init(Vector2 direction, GameObject owner, bool moveOnlyCardinalDirection = false)
     {
-        if (direction.x != 0)
-            direction.y = 0;
+        if (moveOnlyCardinalDirection)
+        {
+            if (direction.x != 0)
+                direction.y = 0;
+        }
         
         _direction = direction;
         _canMove = true;
