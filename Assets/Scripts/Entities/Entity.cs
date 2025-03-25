@@ -1,3 +1,4 @@
+using System;
 using Interfaces;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ namespace Entities
     public abstract class Entity : MonoBehaviour, IHittable
     {
         [SerializeField] protected int _initLife;
+
+        public Action<Entity> DieEvent;
 
         protected int _currentLife;
 
@@ -29,6 +32,7 @@ namespace Entities
 
         protected virtual void Die()
         {
+            DieEvent?.Invoke(this);
         }
 
         public void Hit(int damage)

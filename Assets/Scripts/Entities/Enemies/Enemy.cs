@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Entities.Enemies
@@ -6,6 +7,7 @@ namespace Entities.Enemies
     {
         [SerializeField] protected SpriteRenderer _spriteRenderer;
         [SerializeField] protected Transform _selfTransform;
+
 
         protected override void Die()
         {

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Entities.Player;
 using Managers;
@@ -38,7 +37,6 @@ namespace Entities.Enemies
 
             if (_currentPath != null && _currentPathIndex < _currentPath.Count)
                 MoveAlongPath();
-
         }
 
         private void UpdatePath()
@@ -67,7 +65,6 @@ namespace Entities.Enemies
                 }
             }
         }
-        
         
         private RoomNode GetCurrentRoomNode()
         {

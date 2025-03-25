@@ -217,9 +217,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b47458a4d0b47b88e3069c77de9aec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initLife: 6
+  _initLife: 10
   _spriteRenderer: {fileID: 6677323721786711658}
   _selfTransform: {fileID: 5750543385908622444}
   _speed: 0.7
-  _bodyAnimator: {fileID: 6494155372444742410}
   _pathUpdateInterval: 0.6
+  _bodyAnimator: {fileID: 6494155372444742410}

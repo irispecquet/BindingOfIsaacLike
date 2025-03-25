@@ -20,6 +20,7 @@ namespace Entities.Enemies
 
         protected override void Update()
         {
+            base.Update();
             RefreshShootingCooldown();
         }
 

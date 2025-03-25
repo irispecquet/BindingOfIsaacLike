@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2199917041929863738, guid: 07d1c0a59b54b0d4cb52f1153301ed7e, type: 3}
       propertyPath: m_Name
-      value: Bullet_Player
+      value: Bullet_Tear
       objectReference: {fileID: 0}
     - target: {fileID: 3394739996475435280, guid: 07d1c0a59b54b0d4cb52f1153301ed7e, type: 3}
       propertyPath: _damage
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5285072415189265323, guid: 07d1c0a59b54b0d4cb52f1153301ed7e, type: 3}
       propertyPath: m_LocalPosition.x

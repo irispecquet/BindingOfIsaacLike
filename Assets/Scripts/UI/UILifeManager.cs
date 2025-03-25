@@ -12,6 +12,9 @@ namespace UI
 
         public void RefreshHearts(int life)
         {
+            if (life < 0)
+                return;
+            
             bool isEven = life % 2 == 0;
             int total = life / 2;
 
@@ -23,7 +26,6 @@ namespace UI
             
             if (!isEven)
                 _allHeartImages[total].sprite = _semiHeart;
-            
         }
     }
 }

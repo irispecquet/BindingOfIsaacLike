@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15ee53960b994e6ca7b40c8edfc39732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initLife: 2
+  _initLife: 8
   _spriteRenderer: {fileID: 1006063252815887824}
   _selfTransform: {fileID: 2203059577036396502}
   _wallLayer:

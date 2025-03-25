@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using Entities;
 using Entities.Enemies;
 using LuniLib.Extensions;
+using Managers;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -9,7 +11,8 @@ namespace Rooms
 {
     public class Room : MonoBehaviour
     {
-        [Header("Room Properties")]
+        [Header("Room Properties")] 
+        [SerializeField] private Transform _gridParent;
         [SerializeField] private Vector2 _roomSize;
         [SerializeField] private Vector2 _nodeSize;
         [SerializeField] private GameObject _nodePrefab;
@@ -17,18 +20,18 @@ namespace Rooms
         [SerializeField] private int _obstacleSpawnChance;
         [SerializeField] private int _enemySpawnChance;
         [SerializeField] private bool _debugNodePosition;
-        
-        [Header("Enemies")]
-        [SerializeField] private GameObject[] _enemyTypePool; 
+        [SerializeField] private Door[] _roomDoors;
 
+        [Header("Enemies")] [SerializeField] private GameObject[] _enemyTypePool;
+        
         public RoomNode[,] Nodes { get; private set; }
 
-        private void Awake()
-        {
-            SetRoom();
-        }
+        private List<Enemy> _enemies = new();
+        private bool _roomCleared;
 
-        private void SetRoom()
+        #region ROOM SETUP
+
+        public void SetRoom()
         {
             int roomSizeX = Mathf.RoundToInt(_roomSize.x / _nodeSize.x);
             int roomSizeY = Mathf.RoundToInt(_roomSize.y / _nodeSize.y);
@@ -39,12 +42,12 @@ namespace Rooms
             {
                 for (int y = 0; y < Nodes.GetLength(1); y++)
                 {
-                    float xPosition = transform.position.x + x * _nodeSize.x;
-                    float yPosition = transform.position.y + y * _nodeSize.y;
-                    
+                    float xPosition = _gridParent.position.x + x * _nodeSize.x;
+                    float yPosition = _gridParent.position.y + y * _nodeSize.y;
+
                     int randomOccupied = Random.Range(0, 100);
                     int randomEnemy = Random.Range(0, 100);
-                    
+
                     bool occupied = randomOccupied < _obstacleSpawnChance;
                     bool enemy = randomEnemy < _enemySpawnChance && !occupied;
 
@@ -61,7 +64,7 @@ namespace Rooms
                     if (enemy)
                     {
                         GameObject newEnemy = _enemyTypePool.RandomElement();
-                        Instantiate(newEnemy, new Vector3(xPosition, yPosition, 0), Quaternion.identity);
+                        _enemies.Add(Instantiate(newEnemy, new Vector3(xPosition, yPosition, 0), Quaternion.identity).GetComponentInChildren<Enemy>());
                     }
 
                     CreateNode(x, y, new Vector3(xPosition, yPosition, 0), occupied);
@@ -70,6 +73,18 @@ namespace Rooms
 
             foreach (RoomNode node in Nodes)
                 node.SetNeighbours(GetNodeNeighbour(node.Index.x, node.Index.y));
+
+            _roomCleared = _enemies.Count <= 0;
+
+            if (!_roomCleared)
+            {
+                foreach (Enemy enemy in _enemies)
+                    enemy.DieEvent += RemoveEnemies;
+            }
+            else
+            {
+                OpenRoom();
+            }
         }
 
         private void CreateNode(int x, int y, Vector3 worldPosition, bool occupied)
@@ -80,7 +95,7 @@ namespace Rooms
         private RoomNode[] GetNodeNeighbour(int x, int y)
         {
             List<RoomNode> roomNodes = new List<RoomNode>();
-            
+
             (int dx, int dy)[] directions =
             {
                 (-1, 0),
@@ -92,17 +107,61 @@ namespace Rooms
                 (1, 1),
                 (1, -1)
             };
-            
+
             foreach ((int dx, int dy) in directions)
             {
                 int newX = x + dx;
                 int newY = y + dy;
-            
+
                 if (newX >= 0 && newX < Nodes.GetLength(0) && newY >= 0 && newY < Nodes.GetLength(1) && !Nodes[newX, newY].IsOccupied)
                     roomNodes.Add(Nodes[newX, newY]);
             }
-            
+
             return roomNodes.ToArray();
+        }
+
+        #endregion // ROOM SETUP
+
+        private void Start()
+        {
+            foreach (Door door in _roomDoors)
+                door.Init(this);
+        }
+        
+        private void RemoveEnemies(Entity enemy)
+        {
+            _enemies.Remove(enemy as Enemy);
+            enemy.DieEvent -= RemoveEnemies;
+
+            if (_enemies.Count <= 0)
+            {
+                _roomCleared = true;
+                OpenRoom();
+            }
+        }
+
+        public void PlayerEnterRoom(Vector3 playerPosition)
+        {
+            if (!_roomCleared)
+            {
+                SetRoom();
+
+                foreach (Door door in _roomDoors)
+                    door.SetDoorState(false);
+            }
+
+            Debug.Log("Player enter!");
+            Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
+            GameManager.Instance.RoomManager.ChangeRoom(this, playerPosition);
+        }
+
+        private void OpenRoom()
+        {
+            foreach (Door door in _roomDoors)
+                door.SetDoorState(true);
+            
+            Debug.Log("Player can leave!");
+            _roomCleared = true;
         }
     }
 }

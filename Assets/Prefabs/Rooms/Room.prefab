@@ -130,63 +130,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &874589891103311225
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 512148574946228273}
-  - component: {fileID: 5513764944188155748}
-  m_Layer: 0
-  m_Name: RoomTiling
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &512148574946228273
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874589891103311225}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.75, y: -1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2792907187273194548}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5513764944188155748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874589891103311225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 298f01f6efbb49f6b84fb05e55a05d01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _roomSize: {x: 4, y: 2}
-  _nodeSize: {x: 0.35, y: 0.35}
-  _nodePrefab: {fileID: 2818783750872439954, guid: 871c2dda32cb0ef4081d6f3de669e6cd, type: 3}
-  _poopPrefab: {fileID: 8583198698188738138, guid: b3c24ae5293847f49a95af06d4cbf5c4, type: 3}
-  _obstacleSpawnChance: 10
-  _enemySpawnChance: 5
-  _debugNodePosition: 1
-  _enemyTypePool:
-  - {fileID: 3528409172590103690, guid: 12e48872c4d160d4da5b0cfea1125cc7, type: 3}
-  - {fileID: 7027512404167009401, guid: f3555af1e5185134eb2f961f84e72802, type: 3}
-  - {fileID: 7027512404167009401, guid: 071025519ba123448a63ee28821d8844, type: 3}
-  - {fileID: 2928622291846795430, guid: 4a95cf28c6b074e44a2d7778a96816e1, type: 3}
-  - {fileID: 3520234854221236163, guid: 8ccea509eab1896429c84266bb108178, type: 3}
 --- !u!1 &3390309900278337184
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,6 +520,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &5901756374190379252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3643115271996132912}
+  m_Layer: 0
+  m_Name: GridParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3643115271996132912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5901756374190379252}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.75, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2792907187273194548}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6641428244861731742
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +635,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8090204195317555672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8135463076474925388}
+  m_Layer: 0
+  m_Name: Doors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8135463076474925388
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8090204195317555672}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2792907187273194548}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8374971796429159441
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,6 +675,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2792907187273194548}
+  - component: {fileID: 8392763971830641518}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -695,6 +701,34 @@ Transform:
   - {fileID: 2815540914550420453}
   - {fileID: 8346367786048834306}
   - {fileID: 8140888328626477688}
-  - {fileID: 512148574946228273}
+  - {fileID: 8135463076474925388}
+  - {fileID: 3643115271996132912}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8392763971830641518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8374971796429159441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 298f01f6efbb49f6b84fb05e55a05d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gridParent: {fileID: 3643115271996132912}
+  _roomSize: {x: 3.6, y: 2}
+  _nodeSize: {x: 0.2, y: 0.2}
+  _nodePrefab: {fileID: 2818783750872439954, guid: 871c2dda32cb0ef4081d6f3de669e6cd, type: 3}
+  _poopPrefab: {fileID: 8583198698188738138, guid: b3c24ae5293847f49a95af06d4cbf5c4, type: 3}
+  _obstacleSpawnChance: 2
+  _enemySpawnChance: 3
+  _debugNodePosition: 0
+  _roomDoors: []
+  _enemyTypePool:
+  - {fileID: 3528409172590103690, guid: 12e48872c4d160d4da5b0cfea1125cc7, type: 3}
+  - {fileID: 7027512404167009401, guid: f3555af1e5185134eb2f961f84e72802, type: 3}
+  - {fileID: 7027512404167009401, guid: 071025519ba123448a63ee28821d8844, type: 3}
+  - {fileID: 2928622291846795430, guid: 4a95cf28c6b074e44a2d7778a96816e1, type: 3}
+  - {fileID: 3520234854221236163, guid: 8ccea509eab1896429c84266bb108178, type: 3}
