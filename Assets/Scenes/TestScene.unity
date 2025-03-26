@@ -2690,14 +2690,6 @@ PrefabInstance:
       propertyPath: _debugStateText
       value: 
       objectReference: {fileID: 21009964}
-    - target: {fileID: 3902873135899738702, guid: e562ee8212a9425418e19d08e8de92d0, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3992302283960685290, guid: e562ee8212a9425418e19d08e8de92d0, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 5596355873088195995, guid: e562ee8212a9425418e19d08e8de92d0, type: 3}
       propertyPath: m_SleepingMode
       value: 0
@@ -2705,10 +2697,6 @@ PrefabInstance:
     - target: {fileID: 5596355873088195995, guid: e562ee8212a9425418e19d08e8de92d0, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8414228333927495921, guid: e562ee8212a9425418e19d08e8de92d0, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8627268710521560496, guid: e562ee8212a9425418e19d08e8de92d0, type: 3}
       propertyPath: m_Name

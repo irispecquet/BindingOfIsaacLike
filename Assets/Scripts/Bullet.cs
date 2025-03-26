@@ -1,8 +1,14 @@
 using Interfaces;
+using LuniLib.View;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour, IHitter
 {
+    [Header("References")]
+    [SerializeField] private Animator2D _animator2D;
+    [SerializeField] private Collider2D _collider;
+    
+    [Header("Values")]
     [SerializeField] private float _speed;
     [SerializeField] private int _damage;
     
@@ -38,8 +44,10 @@ public class Bullet : MonoBehaviour, IHitter
         
         if(other.gameObject.TryGetComponent(out IHittable hittable))
             OnHit(hittable);
-        
-        Destroy(gameObject);
+
+        _canMove = false;
+        _collider.enabled = false;
+        _animator2D.PlayActionAnimation("Explode", null, () => Destroy(gameObject));
     }
 
     public void OnHit(IHittable hittable)

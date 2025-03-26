@@ -9,6 +9,7 @@ namespace Entities
         [SerializeField] protected int _initLife;
 
         public Action<Entity> DieEvent;
+        public Action<Entity> HurtEvent;
 
         protected int _currentLife;
 
@@ -20,9 +21,11 @@ namespace Entities
         protected virtual void TakeDamage(int damage)
         {
             SetLife(_currentLife - damage);
-
+            
             if (_currentLife <= 0)
                 Die();
+            else
+                HurtEvent?.Invoke(this);
         }
 
         private void SetLife(int value)

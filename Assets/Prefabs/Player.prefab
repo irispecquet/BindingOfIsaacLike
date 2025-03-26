@@ -208,6 +208,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6e8ca8625791f3b4b970afba82875d7c, type: 2}
   - {fileID: 11400000, guid: f67823e99c6b1714095ddc219ee91c79, type: 2}
   - {fileID: 11400000, guid: 36b0bed44fcdd294bb843ded88fdc670, type: 2}
+  - {fileID: 11400000, guid: afcf868c77f839548a5b6ec07d121d79, type: 2}
 --- !u!1 &8414228333927495921
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +314,7 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 4778595488043172221, guid: ddbd1170bd0e87d4fb490a815501dd52, type: 3}
   _speed: 1.4
   _acceleration: 9
-  _shootCooldown: 0.7
+  _shootCooldown: 0.4
 --- !u!50 &5596355873088195995
 Rigidbody2D:
   serializedVersion: 4
@@ -373,6 +374,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.08}
   serializedVersion: 2
-  m_Radius: 0.11
+  m_Radius: 0.09

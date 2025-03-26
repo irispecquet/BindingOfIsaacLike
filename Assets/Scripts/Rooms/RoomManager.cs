@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Entities;
 using Entities.Player;
 using Managers;
@@ -32,11 +33,20 @@ namespace Rooms
             Debug.Log("Player died!");
         }
 
-        public void ChangeRoom(Room room, Vector3 playerPosition) 
+        public async void ChangeRoom(Room room, Vector3 playerPosition)
         {
-            GameManager.Instance.UIManager.FadeIn(() => GameManager.Instance.UIManager.FadeOut());
+            bool roomCanChange = false;
+            
+            GameManager.Instance.UIManager.FadeIn(() => roomCanChange = true);
+
+            while (!roomCanChange)
+                await Task.Delay(1);
+            
             CurrentRoom = room;
+            room.PlayerEnterRoom();
             _player.transform.position = playerPosition;
+            
+            GameManager.Instance.UIManager.FadeOut();
         }
     }
 }

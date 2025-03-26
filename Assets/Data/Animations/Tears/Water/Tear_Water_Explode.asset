@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d30c8bfe1f4d64e83c1b9db9a9ad27, type: 3}
+  m_Name: Tear_Water_Explode
+  m_EditorClassIdentifier: 
+  <AnimationName>k__BackingField: Explode
+  <Sprites>k__BackingField:
+  - {fileID: 1547250885, guid: 113db59d802034a4fa77e5413b874b8c, type: 3}
+  - {fileID: -809313191, guid: 113db59d802034a4fa77e5413b874b8c, type: 3}
+  - {fileID: 464759117, guid: 113db59d802034a4fa77e5413b874b8c, type: 3}
+  - {fileID: -2134553741, guid: 113db59d802034a4fa77e5413b874b8c, type: 3}
+  - {fileID: 2103534316, guid: 113db59d802034a4fa77e5413b874b8c, type: 3}
+  - {fileID: -918256157, guid: 113db59d802034a4fa77e5413b874b8c, type: 3}
+  - {fileID: -24850707, guid: 113db59d802034a4fa77e5413b874b8c, type: 3}
+  - {fileID: -349456881, guid: 113db59d802034a4fa77e5413b874b8c, type: 3}
+  - {fileID: -2030490780, guid: 113db59d802034a4fa77e5413b874b8c, type: 3}
+  - {fileID: -1879301090, guid: 113db59d802034a4fa77e5413b874b8c, type: 3}
+  - {fileID: 1523880767, guid: 113db59d802034a4fa77e5413b874b8c, type: 3}
+  - {fileID: 1476297337, guid: 113db59d802034a4fa77e5413b874b8c, type: 3}
+  <FramePerSeconds>k__BackingField: 40
+  <AnimationType>k__BackingField: 1

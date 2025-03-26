@@ -58,9 +58,12 @@ namespace LuniLib.View
                 _currentSpriteIndex++;
 
                 EndAnimation();
-                
-                if (_currentAnimation != null) 
-                    _spriteRenderer.sprite = _currentAnimation.Sprites[_currentSpriteIndex];
+
+                if (_currentAnimation != null)
+                {
+                    Sprite newSprite = _currentAnimation.Sprites[_currentSpriteIndex];
+                    _spriteRenderer.sprite = newSprite;
+                }
             }
         }
 

@@ -1,3 +1,5 @@
+using Entities.Player;
+using Managers;
 using UnityEngine;
 
 namespace Rooms
@@ -27,8 +29,8 @@ namespace Rooms
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (_isOpened)
-                _joiningDoor._room.PlayerEnterRoom(_joiningDoor._playerSpawnTransform.position);
+            if (_isOpened && other.GetComponent<PlayerController>())
+                GameManager.Instance.RoomManager.ChangeRoom(_joiningDoor._room, _joiningDoor._playerSpawnTransform.position);
         }
     }
 }

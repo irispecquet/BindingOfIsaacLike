@@ -91,7 +91,7 @@ namespace Entities.Player
                 {
                     _isShooting = false;
                     CancelShootEvent?.Invoke();
-                    _cooldownTimer = 0;
+                    // _cooldownTimer = 0;
                 }
             }
         }

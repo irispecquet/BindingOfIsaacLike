@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a901a8a796d64ad588d4cceb260da122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 3394739996475435280, guid: 07d1c0a59b54b0d4cb52f1153301ed7e, type: 3}
+  _bulletPrefab: {fileID: 3737337356965525270, guid: c55150dca621cb042bc4893acc3e9ebe, type: 3}
   _detectionType: 0
   _targetDetectionRayLenght: 2
   _targetLayer:

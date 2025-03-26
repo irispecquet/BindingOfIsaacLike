@@ -19,6 +19,7 @@ namespace Entities.Enemies
 
         protected override void Start()
         {
+            base.Start();
             _pathFinder = new PathFinder();
             _player = GameManager.Instance.PlayerController;
             _currentPath = new List<RoomNode>();
@@ -60,9 +61,7 @@ namespace Entities.Enemies
                 _selfTransform.position = Vector3.MoveTowards(_selfTransform.position, targetPosition, _speed * Time.deltaTime);
 
                 if (Vector3.Distance(_selfTransform.position, targetPosition) < 0.1f)
-                {
                     _currentPathIndex++;
-                }
             }
         }
         

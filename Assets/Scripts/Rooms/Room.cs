@@ -19,6 +19,7 @@ namespace Rooms
         [SerializeField] private GameObject _poopPrefab;
         [SerializeField] private int _obstacleSpawnChance;
         [SerializeField] private int _enemySpawnChance;
+        [SerializeField] private int _maxEnemyCount;
         [SerializeField] private bool _debugNodePosition;
         [SerializeField] private Door[] _roomDoors;
 
@@ -49,7 +50,7 @@ namespace Rooms
                     int randomEnemy = Random.Range(0, 100);
 
                     bool occupied = randomOccupied < _obstacleSpawnChance;
-                    bool enemy = randomEnemy < _enemySpawnChance && !occupied;
+                    bool enemy = randomEnemy < _enemySpawnChance && !occupied && _enemies.Count < _maxEnemyCount;
 
                     if (_debugNodePosition)
                     {
@@ -140,7 +141,7 @@ namespace Rooms
             }
         }
 
-        public void PlayerEnterRoom(Vector3 playerPosition)
+        public void PlayerEnterRoom()
         {
             if (!_roomCleared)
             {
@@ -152,7 +153,6 @@ namespace Rooms
 
             Debug.Log("Player enter!");
             Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
-            GameManager.Instance.RoomManager.ChangeRoom(this, playerPosition);
         }
 
         private void OpenRoom()

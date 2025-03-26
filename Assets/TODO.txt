@@ -1,0 +1,14 @@
+TO DO :
+- Eviter collision entre ennemis (tile où ils sont doit être occupée)
+- Anim die
+- Menu
+- Restart game
+- tirer sur les kk
+- autres obstacles
+
+
+
+
+
+FINISHED
+- Explosion balles

@@ -19,6 +19,20 @@ namespace Entities.Player
         {
             _playerController.ShootEvent += OnShoot;
             _playerController.CancelShootEvent += OnCancelShoot;
+            
+            _playerController.HurtEvent += OnPlayerHurt;
+            _playerController.DieEvent += OnPlayerDied;
+        }
+
+        private void OnPlayerDied(Entity player)
+        {
+            
+        }
+
+        private void OnPlayerHurt(Entity player)
+        {
+            _headSpriteRenderer.enabled = false;
+            _bodyAnimator.PlayActionAnimation("Hurt", null, () => _headSpriteRenderer.enabled = true);
         }
 
         private void Update()

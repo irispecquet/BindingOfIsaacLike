@@ -724,6 +724,7 @@ MonoBehaviour:
   _poopPrefab: {fileID: 8583198698188738138, guid: b3c24ae5293847f49a95af06d4cbf5c4, type: 3}
   _obstacleSpawnChance: 2
   _enemySpawnChance: 3
+  _maxEnemyCount: 4
   _debugNodePosition: 0
   _roomDoors: []
   _enemyTypePool:
