@@ -2068,7 +2068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1887771344
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2254,6 +2254,9 @@ MonoBehaviour:
   <PlayerController>k__BackingField: {fileID: 1580760347}
   <RoomManager>k__BackingField: {fileID: 723365151}
   <UIManager>k__BackingField: {fileID: 889682662}
+  _menuScene:
+    sceneAsset: {fileID: 102900000, guid: 6dbee6636df9a674eb92b2bfe2233398, type: 3}
+    sceneName: Menu
 --- !u!4 &2074236991
 Transform:
   m_ObjectHideFlags: 0
@@ -2431,7 +2434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8392763971830641518, guid: 84ff8ee119e697a4184ed925bd9b1598, type: 3}
       propertyPath: _obstacleSpawnChance
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8392763971830641518, guid: 84ff8ee119e697a4184ed925bd9b1598, type: 3}
       propertyPath: _roomDoors.Array.size

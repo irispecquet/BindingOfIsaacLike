@@ -7,12 +7,13 @@ namespace CameraBehaviour
         private CameraFollowProperties _properties;
         private Transform _target;
         
-        public void SetProperties(CameraFollowProperties properties, Transform target)
+        public void SetProperties(CameraFollowProperties properties, Transform target, Transform initialPosition)
         {
             _properties = properties;
             _target = target;
-            
-            transform.position = new Vector3(_target.position.x, _target.position.y, transform.position.z);
+
+            Transform targetTransform = !_properties.FollowOnY && !_properties.FollowOnX ? initialPosition : target;
+            transform.position = new Vector3(targetTransform.position.x, targetTransform.position.y, transform.position.z);
         }
 
         private void LateUpdate()

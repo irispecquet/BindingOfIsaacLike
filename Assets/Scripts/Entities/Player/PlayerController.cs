@@ -12,6 +12,7 @@ namespace Entities.Player
     {
         [Header("References")] 
         [SerializeField] private InputsHandler _inputs;
+        [SerializeField] private PlayerView _playerView;
         [SerializeField] private Rigidbody2D _rigidbody;
         [SerializeField] private TMP_Text _debugStateText;
         [SerializeField] private Bullet _bulletPrefab;
@@ -143,6 +144,7 @@ namespace Entities.Player
         protected override void Die()
         {
             base.Die();
+            _playerView.DieAnimationFinishedEvent += GameManager.Instance.OnPlayerDied;
             _inputs.Disable();
         }
     }

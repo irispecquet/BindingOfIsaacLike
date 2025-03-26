@@ -60,8 +60,10 @@ namespace Rooms
                     int randomOccupied = Random.Range(0, 100);
                     int randomEnemy = Random.Range(0, 100);
 
-                    bool occupied = randomOccupied < _obstacleSpawnChance;
-                    bool enemy = randomEnemy < _enemySpawnChance && !occupied && _enemies.Count < _maxEnemyCount;
+                    bool isEdge = x == 0 || x == Nodes.GetLength(0) - 1 || y == 0 || y == Nodes.GetLength(1) - 1;
+                    
+                    bool occupied = randomOccupied < _obstacleSpawnChance && !isEdge;
+                    bool enemy = randomEnemy < _enemySpawnChance && !occupied && _enemies.Count < _maxEnemyCount && !isEdge;
 
                     if (_debugNodePosition)
                     {
@@ -71,12 +73,12 @@ namespace Rooms
                     }
 
                     if (occupied)
-                        Instantiate(_poopPrefab, new Vector3(xPosition, yPosition, 0), Quaternion.identity);
+                        Instantiate(_poopPrefab, new Vector3(xPosition, yPosition, 0), Quaternion.identity, transform);
 
                     if (enemy)
                     {
                         GameObject newEnemy = _enemyTypePool.RandomElement();
-                        _enemies.Add(Instantiate(newEnemy, new Vector3(xPosition, yPosition, 0), Quaternion.identity).GetComponentInChildren<Enemy>());
+                        _enemies.Add(Instantiate(newEnemy, new Vector3(xPosition, yPosition, 0), Quaternion.identity, transform).GetComponentInChildren<Enemy>());
                     }
 
                     CreateNode(x, y, new Vector3(xPosition, yPosition, 0), occupied);
@@ -165,7 +167,7 @@ namespace Rooms
                     door.SetDoorState(false);
             }
             
-            GameManager.Instance.RoomManager.SetCameraProperties(_cameraFollowProperties);
+            GameManager.Instance.RoomManager.SetCameraProperties(_cameraFollowProperties, transform);
 
             Debug.Log("Player enter!");
         }

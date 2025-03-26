@@ -50,12 +50,22 @@ namespace Entities
             DieEvent?.Invoke(this);
         }
 
-        public void Hit(int damage)
+        public virtual void Hit(int damage)
         {
             TakeDamage(damage);
         }
 
         private void OnTriggerEnter2D(Collider2D other)
+        {
+            ApplyDamage(other);
+        }
+
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            ApplyDamage(other);
+        }
+
+        private void ApplyDamage(Collider2D other)
         {
             if (_doDamageOnTouch)
             {
@@ -63,7 +73,7 @@ namespace Entities
                     OnHit(hittable);
             }
         }
-
+        
         public void OnHit(IHittable hittable)
         {
             hittable.Hit(_damage);
@@ -81,7 +91,6 @@ namespace Entities
                 if (node.ContainsPosition(transform.position))
                 {
                     CurrentRoomNode = node;
-                    
                     break;
                 }
             }

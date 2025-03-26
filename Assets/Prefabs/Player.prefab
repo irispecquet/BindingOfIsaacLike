@@ -312,6 +312,7 @@ MonoBehaviour:
   _doDamageOnTouch: 0
   _damage: 0
   _inputs: {fileID: 0}
+  _playerView: {fileID: 438169314386464978}
   _rigidbody: {fileID: 5596355873088195995}
   _debugStateText: {fileID: 0}
   _bulletPrefab: {fileID: 4778595488043172221, guid: ddbd1170bd0e87d4fb490a815501dd52, type: 3}

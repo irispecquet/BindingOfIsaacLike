@@ -50,9 +50,9 @@ namespace Rooms
             GameManager.Instance.UIManager.FadeOut();
         }
 
-        public void SetCameraProperties(CameraFollowProperties properties)
+        public void SetCameraProperties(CameraFollowProperties properties, Transform initialPosition)
         {
-            _cameraFollow.SetProperties(properties, GameManager.Instance.PlayerController.transform);
+            _cameraFollow.SetProperties(properties, GameManager.Instance.PlayerController.transform, initialPosition);
         }
     }
 }

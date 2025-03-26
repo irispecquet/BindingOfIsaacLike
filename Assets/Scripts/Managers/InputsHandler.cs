@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,6 +6,8 @@ namespace Managers
 {
     public class InputsHandler : MonoBehaviour
     {
+        public Action ConfirmEvent;
+        
         public Vector2 CurrentMoveInputs { get; private set; }
         
         private PlayerInputs _playerInputs;
@@ -25,6 +28,13 @@ namespace Managers
 
             _playerInputs.Attack.Shoot.performed += OnShoot;
             _playerInputs.Attack.Shoot.canceled += OnShoot;
+            
+            _playerInputs.Interaction.Confirm.started += OnConfirm;
+        }
+
+        private void OnConfirm(InputAction.CallbackContext obj)
+        {
+            ConfirmEvent?.Invoke(); 
         }
 
         private void OnMove(InputAction.CallbackContext obj)

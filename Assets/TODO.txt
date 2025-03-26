@@ -1,8 +1,5 @@
 TO DO :
 - Eviter collision entre ennemis (tile où ils sont doit être occupée)
-- Menu
-- Restart game
-- tirer sur les kk
 - autres obstacles
 - qlq items ?
 
@@ -10,6 +7,9 @@ TO DO :
 
 
 FINISHED
+- tirer sur les kk
+- Restart game
+- Menu
 - cam follow player quand longue salle
 - faire des rooms taille dif
 - dégat cac

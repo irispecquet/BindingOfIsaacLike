@@ -1,3 +1,4 @@
+using System;
 using LuniLib.View;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ namespace Entities.Player
         [SerializeField] private SpriteRenderer _bodySpriteRenderer;
         [SerializeField] private PlayerController _playerController;
 
+        public Action DieAnimationFinishedEvent;
+        
         private Vector2 _playerInputs;
         private float _lastHorizontalInput;
         private bool _isShooting;
@@ -29,7 +32,7 @@ namespace Entities.Player
         {
             _isDead = true;
             _headSpriteRenderer.enabled = false;
-            _bodyAnimator.PlayActionAnimation("Die");
+            _bodyAnimator.PlayActionAnimation("Die", null, () => DieAnimationFinishedEvent?.Invoke());
         }
 
         private void OnPlayerHurt(Entity player)
