@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using CameraBehaviour;
 using Entities;
 using Entities.Enemies;
 using LuniLib.Extensions;
@@ -22,17 +23,27 @@ namespace Rooms
         [SerializeField] private int _maxEnemyCount;
         [SerializeField] private bool _debugNodePosition;
         [SerializeField] private Door[] _roomDoors;
+        [SerializeField] private CameraFollowProperties _cameraFollowProperties;
 
-        [Header("Enemies")] [SerializeField] private GameObject[] _enemyTypePool;
+        [Header("Enemies")] 
+        [SerializeField] private GameObject[] _enemyTypePool;
         
         public RoomNode[,] Nodes { get; private set; }
+        public bool IsSet { get; private set; }
 
         private List<Enemy> _enemies = new();
         private bool _roomCleared;
 
         #region ROOM SETUP
 
-        public void SetRoom()
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.white;
+            Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + _roomSize.x / 2, transform.position.y, 0));
+            Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y + _roomSize.y / 2, 0));
+        }
+
+        private void SetRoom()
         {
             int roomSizeX = Mathf.RoundToInt(_roomSize.x / _nodeSize.x);
             int roomSizeY = Mathf.RoundToInt(_roomSize.y / _nodeSize.y);
@@ -86,6 +97,8 @@ namespace Rooms
             {
                 OpenRoom();
             }
+
+            IsSet = true;
         }
 
         private void CreateNode(int x, int y, Vector3 worldPosition, bool occupied)
@@ -143,16 +156,18 @@ namespace Rooms
 
         public void PlayerEnterRoom()
         {
+            if(!IsSet)
+                SetRoom();
+            
             if (!_roomCleared)
             {
-                SetRoom();
-
                 foreach (Door door in _roomDoors)
                     door.SetDoorState(false);
             }
+            
+            GameManager.Instance.RoomManager.SetCameraProperties(_cameraFollowProperties);
 
             Debug.Log("Player enter!");
-            Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
         }
 
         private void OpenRoom()

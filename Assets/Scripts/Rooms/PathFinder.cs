@@ -10,7 +10,8 @@ namespace Rooms
     {
         public List<RoomNode> GetPath(RoomNode originNode, RoomNode targetNode)
         {
-            return AStar.GetPath(originNode, targetNode, GetDistance, GetHeuristicDistance, GetNeighbours);
+            var roomNodes = AStar.GetPath(originNode, targetNode, GetDistance, GetHeuristicDistance, GetNeighbours);
+            return roomNodes;
         }
 
         private float GetHeuristicDistance(RoomNode originNode, RoomNode targetNode)
@@ -23,7 +24,15 @@ namespace Rooms
 
         private RoomNode[] GetNeighbours(RoomNode node)
         {
-            return node.Neighbours.Where(neighbor => neighbor != null && !neighbor.IsOccupied).ToArray();
+            List<RoomNode> neighbours = new List<RoomNode>();
+            
+            foreach (RoomNode neighbour in node.Neighbours)
+            {
+                if(neighbour != null && !neighbour.IsOccupied)
+                    neighbours.Add(neighbour);
+            }
+            
+            return neighbours.ToArray();
         }
 
         private float GetDistance(RoomNode originNode, RoomNode targetNode)

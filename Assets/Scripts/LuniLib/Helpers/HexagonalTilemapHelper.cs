@@ -227,7 +227,7 @@ namespace LuniLib.Helpers
             return false;
         }
         
-        public static Vector2Int? GetCellFromScreenPoint(Vector3 screenPosition, Camera camera, Plane tilemapPlane)
+        public static Vector2Int? GetCellFromScreenPoint(Vector3 screenPosition, UnityEngine.Camera camera, Plane tilemapPlane)
         {
             Ray ray = camera.ScreenPointToRay(screenPosition);
             if (tilemapPlane.Raycast(ray, out float dist))
@@ -248,7 +248,7 @@ namespace LuniLib.Helpers
         //     return null;
         // }
 
-        public static Vector2 GetViewportPointFromCell(Vector2Int cellPosition, Camera camera)
+        public static Vector2 GetViewportPointFromCell(Vector2Int cellPosition, UnityEngine.Camera camera)
         {
             Vector3 worldPosition = CellToWorld(cellPosition);
             return camera.WorldToViewportPoint(worldPosition);

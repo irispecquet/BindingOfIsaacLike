@@ -73,11 +73,15 @@ namespace Entities
         {
             Room room = GameManager.Instance.RoomManager.CurrentRoom;
 
+            if (!room.IsSet)
+                return;
+
             foreach (RoomNode node in room.Nodes)
             {
                 if (node.ContainsPosition(transform.position))
                 {
                     CurrentRoomNode = node;
+                    
                     break;
                 }
             }

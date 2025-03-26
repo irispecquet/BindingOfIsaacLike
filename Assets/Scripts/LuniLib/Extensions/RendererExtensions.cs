@@ -11,7 +11,7 @@ namespace LuniLib.Extensions
 		/// <param name="renderer">Renderer.</param>
 		/// <param name="camera">Camera to check.</param>
 		/// <returns>True if the renderer is visible by the specified camera.</returns>
-		public static bool IsVisibleByCamera(this Renderer renderer, Camera camera)
+		public static bool IsVisibleByCamera(this Renderer renderer, UnityEngine.Camera camera)
 		{
 			return GeometryUtility.TestPlanesAABB(GeometryUtility.CalculateFrustumPlanes(camera), renderer.bounds);
 		}

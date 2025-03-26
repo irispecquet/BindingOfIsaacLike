@@ -1,16 +1,16 @@
 TO DO :
+- Eviter collision entre ennemis (tile où ils sont doit être occupée)
 - Menu
 - Restart game
 - tirer sur les kk
 - autres obstacles
-- faire des rooms taille dif
-- cam follow player
+- cam follow player quand longue salle
 
 
 
 
 FINISHED
-- Eviter collision entre ennemis (tile où ils sont doit être occupée)
+- faire des rooms taille dif
 - dégat cac
 - Explosion balles
 - Anim die

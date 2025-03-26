@@ -131,7 +131,7 @@ TextureImporter:
         width: 442
         height: 285
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,6 +139,27 @@ TextureImporter:
       bones: []
       spriteID: 3206fca77dd9a8140ae19f9409f8dc7e
       internalID: 417573792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room Shading_1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 48
+        width: 780
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a392c3e91b59e459cdf51dcd06849b
+      internalID: 601423296
       vertices: []
       indices: 
       edges: []
@@ -155,6 +176,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Room Shading_0: 417573792
+      Room Shading_1: 601423296
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
