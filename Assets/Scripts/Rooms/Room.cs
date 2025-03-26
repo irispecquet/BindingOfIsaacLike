@@ -168,8 +168,6 @@ namespace Rooms
             }
             
             GameManager.Instance.RoomManager.SetCameraProperties(_cameraFollowProperties, transform);
-
-            Debug.Log("Player enter!");
         }
 
         private void OpenRoom()
@@ -177,7 +175,6 @@ namespace Rooms
             foreach (Door door in _roomDoors)
                 door.SetDoorState(true);
             
-            Debug.Log("Player can leave!");
             _roomCleared = true;
         }
     }
