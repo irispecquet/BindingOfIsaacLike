@@ -23,7 +23,7 @@ namespace Rooms
 
         private RoomNode[] GetNeighbours(RoomNode node)
         {
-            return node.Neighbours.Where(neighbor => neighbor != null).ToArray();
+            return node.Neighbours.Where(neighbor => neighbor != null && !neighbor.IsOccupied).ToArray();
         }
 
         private float GetDistance(RoomNode originNode, RoomNode targetNode)

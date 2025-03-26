@@ -14,6 +14,7 @@ namespace Entities.Player
         private Vector2 _playerInputs;
         private float _lastHorizontalInput;
         private bool _isShooting;
+        private bool _isDead;
 
         private void Start()
         {
@@ -26,7 +27,9 @@ namespace Entities.Player
 
         private void OnPlayerDied(Entity player)
         {
-            
+            _isDead = true;
+            _headSpriteRenderer.enabled = false;
+            _bodyAnimator.PlayActionAnimation("Die");
         }
 
         private void OnPlayerHurt(Entity player)
@@ -50,6 +53,9 @@ namespace Entities.Player
 
         private void HandleBodyAnimations()
         {
+            if (_isDead)
+                return;
+            
             _bodySpriteRenderer.flipX = _lastHorizontalInput < 0;
 
             if (_playerInputs == Vector2.zero)

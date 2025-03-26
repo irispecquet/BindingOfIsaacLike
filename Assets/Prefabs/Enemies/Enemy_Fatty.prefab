@@ -143,6 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _initLife: 20
+  _doDamageOnTouch: 1
+  _damage: 1
   _spriteRenderer: {fileID: 6677323721786711658}
   _selfTransform: {fileID: 5750543385908622444}
   _speed: 0.4

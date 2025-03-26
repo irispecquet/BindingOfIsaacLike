@@ -26,8 +26,10 @@ namespace Entities.Enemies
             _changeDirectionCooldown = 0;
         }
         
-        protected virtual void Update()
+        protected override void Update()
         {
+            base.Update();
+            
             WanderAround();
             Move();
         }

@@ -139,7 +139,6 @@ namespace LuniLib.View
         private bool TryPlayAnimation(string animationName, AnimationType animationType)
         {
             AnimationData animationData = null;
-
             
             if (animationType == AnimationType.STATE)
             {

@@ -8,7 +8,6 @@ namespace Entities.Enemies
         [SerializeField] protected SpriteRenderer _spriteRenderer;
         [SerializeField] protected Transform _selfTransform;
 
-
         protected override void Die()
         {
             base.Die();

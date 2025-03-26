@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Entities.Player
 {
-    public class PlayerController : Entity, IHittable
+    public class PlayerController : Entity
     {
         [Header("References")] 
         [SerializeField] private InputsHandler _inputs;
@@ -20,12 +20,12 @@ namespace Entities.Player
         [SerializeField] private float _speed;
         [SerializeField] private float _acceleration;
         [SerializeField] private float _shootCooldown;
+        [SerializeField] private float _damageCooldown = 0.5f;
         public event Action<Vector2> ShootEvent;
         public event Action CancelShootEvent;
         public event Action<int> RefreshLife;
         
         public Vector2 CurrentMoveInputs { get; private set; }
-        public RoomNode CurrentRoomNode { get; private set; }
     
         public PlayerIdleState IdleState => _idleState;
         public PlayerWalkState WalkState => _walkState;
@@ -36,6 +36,7 @@ namespace Entities.Player
 
         private float _lastHorizontalInput;
         private float _cooldownTimer;
+        private float _damageTimer;
         private bool _isShooting;
 
         #region UNITY METHODS
@@ -52,16 +53,21 @@ namespace Entities.Player
 
             SwitchState(IdleState);
             _cooldownTimer = 0;
-            RefreshCurrentRoomNode();
+            _damageTimer = 0;
         }
 
-        private void Update()
+        protected override void Update()
         {
+            base.Update();
+            
             CurrentMoveInputs = _inputs.CurrentMoveInputs;
             _currentState.UpdateState();
 
             if (_cooldownTimer > 0)
                 _cooldownTimer -= Time.deltaTime;
+            
+            if (_damageTimer > 0)
+                _damageTimer -= Time.deltaTime;
 
             HandleShooting();
         }
@@ -100,7 +106,6 @@ namespace Entities.Player
         {
             Vector2 targetVelocity = CurrentMoveInputs.normalized * _speed;
             SetVelocity(targetVelocity, _acceleration * Time.fixedDeltaTime);
-            RefreshCurrentRoomNode();
         }
         
         public void SetVelocity(Vector2 targetVelocity, float acceleration)
@@ -120,20 +125,6 @@ namespace Entities.Player
             _debugStateText.text = _currentState.ToString();
         }
 
-        private void RefreshCurrentRoomNode()
-        {
-            Room room = GameManager.Instance.RoomManager.CurrentRoom;
-
-            foreach (RoomNode node in room.Nodes)
-            {
-                if (node.ContainsPosition(transform.position))
-                {
-                    CurrentRoomNode = node;
-                    break;
-                }
-            }
-        }
-
         public Vector2 GetVelocity()
         {
             return _rigidbody.velocity;
@@ -141,8 +132,12 @@ namespace Entities.Player
 
         protected override void TakeDamage(int damage)
         {
-            base.TakeDamage(damage);
-            RefreshLife?.Invoke(_currentLife);
+            if (_damageTimer <= 0)
+            {
+                base.TakeDamage(damage);
+                RefreshLife?.Invoke(_currentLife);
+                _damageTimer = _damageCooldown;
+            }
         }
 
         protected override void Die()

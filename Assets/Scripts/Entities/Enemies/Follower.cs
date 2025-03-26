@@ -26,9 +26,11 @@ namespace Entities.Enemies
             _currentPathIndex = 0;
             _pathUpdateTimer = _pathUpdateInterval;
         }
-        
-        public virtual void Update()
+
+        protected override void Update()
         {
+            base.Update();
+            
             _pathUpdateTimer += Time.deltaTime;
             if (_pathUpdateTimer >= _pathUpdateInterval || _currentPath == null || _currentPathIndex >= _currentPath.Count)
             {

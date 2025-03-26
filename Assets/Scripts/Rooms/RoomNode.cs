@@ -7,7 +7,7 @@ namespace Rooms
         public RoomNode[] Neighbours { get; private set; }
         public Vector2 WorldPosition { get; private set; }
         public Vector2Int Index { get; private set; }
-        public bool IsOccupied { get; private set; }
+        public bool IsOccupied;
         
         private readonly Vector2 _size;
 

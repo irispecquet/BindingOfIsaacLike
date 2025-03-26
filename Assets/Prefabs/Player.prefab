@@ -209,6 +209,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f67823e99c6b1714095ddc219ee91c79, type: 2}
   - {fileID: 11400000, guid: 36b0bed44fcdd294bb843ded88fdc670, type: 2}
   - {fileID: 11400000, guid: afcf868c77f839548a5b6ec07d121d79, type: 2}
+  - {fileID: 11400000, guid: 94551c4efd0e783438599d204dae964e, type: 2}
 --- !u!1 &8414228333927495921
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +309,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _initLife: 6
+  _doDamageOnTouch: 0
+  _damage: 0
   _inputs: {fileID: 0}
   _rigidbody: {fileID: 5596355873088195995}
   _debugStateText: {fileID: 0}
@@ -315,6 +318,7 @@ MonoBehaviour:
   _speed: 1.4
   _acceleration: 9
   _shootCooldown: 0.4
+  _damageCooldown: 1
 --- !u!50 &5596355873088195995
 Rigidbody2D:
   serializedVersion: 4
