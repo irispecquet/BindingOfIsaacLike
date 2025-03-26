@@ -4,12 +4,13 @@ TO DO :
 - Restart game
 - tirer sur les kk
 - autres obstacles
-- cam follow player quand longue salle
+- qlq items ?
 
 
 
 
 FINISHED
+- cam follow player quand longue salle
 - faire des rooms taille dif
 - dégat cac
 - Explosion balles
