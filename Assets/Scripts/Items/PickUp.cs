@@ -15,7 +15,6 @@ namespace Items
 
         protected virtual void Interact(PlayerController player)
         {
-            Debug.Log($"Interacting with {name}");
         }
     }
 }
