@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Clotty
       objectReference: {fileID: 0}
+    - target: {fileID: 6776409240741530162, guid: 84f66c8bd4a0d5d448b2818d842ac409, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.108
+      objectReference: {fileID: 0}
     - target: {fileID: 7368630354795593406, guid: 84f66c8bd4a0d5d448b2818d842ac409, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -98,7 +102,8 @@ MonoBehaviour:
   _initLife: 15
   _doDamageOnTouch: 0
   _damage: 0
-  _spriteRenderer: {fileID: 998478272630290073}
+  _bodySpriteRenderer: {fileID: 998478272630290073}
+  _headSpriteRenderer: {fileID: 0}
   _selfTransform: {fileID: 2215727598942428319}
   _damageColorTimer: 0.1
   _wallLayer:

@@ -48,7 +48,7 @@ namespace Entities.Enemies
             }
             
             Vector3 targetPosition = transform.right * (_speed * Time.deltaTime);
-            _spriteRenderer.flipX = transform.right.x < 0;
+            _bodySpriteRenderer.flipX = transform.right.x < 0;
             _selfTransform.Translate(targetPosition);
         }
 

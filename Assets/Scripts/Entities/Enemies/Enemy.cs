@@ -6,7 +6,8 @@ namespace Entities.Enemies
 {
     public class Enemy : Entity
     {
-        [SerializeField] protected SpriteRenderer _spriteRenderer;
+        [SerializeField] protected SpriteRenderer _bodySpriteRenderer;
+        [SerializeField] protected SpriteRenderer _headSpriteRenderer;
         [SerializeField] protected Transform _selfTransform;
         [SerializeField] private float _damageColorTimer = 0.1f;
 
@@ -15,14 +16,22 @@ namespace Entities.Enemies
             base.Hit(damage);
             
             StopAllCoroutines();
-            _spriteRenderer.color = Color.red;
+            SetColor(Color.red);
             StartCoroutine(WaitToChangeColor(_damageColorTimer));
+        }
+
+        private void SetColor(Color color)
+        {
+            if(_headSpriteRenderer != null)
+                _headSpriteRenderer.color = color;
+            
+            _bodySpriteRenderer.color = color;
         }
 
         private IEnumerator WaitToChangeColor(float timer)
         {
             yield return new WaitForSeconds(timer);
-            _spriteRenderer.color = Color.white;
+            SetColor(Color.white);
         }
 
         protected override void Die()

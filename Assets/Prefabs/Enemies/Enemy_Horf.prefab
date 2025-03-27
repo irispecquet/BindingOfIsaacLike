@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Horf
       objectReference: {fileID: 0}
+    - target: {fileID: 6776409240741530162, guid: 84f66c8bd4a0d5d448b2818d842ac409, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.177
+      objectReference: {fileID: 0}
     - target: {fileID: 7289081410800389300, guid: 84f66c8bd4a0d5d448b2818d842ac409, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -102,7 +106,8 @@ MonoBehaviour:
   _initLife: 10
   _doDamageOnTouch: 0
   _damage: 0
-  _spriteRenderer: {fileID: 1551681066219465397}
+  _bodySpriteRenderer: {fileID: 1551681066219465397}
+  _headSpriteRenderer: {fileID: 0}
   _selfTransform: {fileID: 498839099090206899}
   _damageColorTimer: 0.1
 --- !u!114 &7202787463703619913

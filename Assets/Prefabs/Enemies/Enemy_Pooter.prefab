@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Pooter
       objectReference: {fileID: 0}
+    - target: {fileID: 6776409240741530162, guid: 84f66c8bd4a0d5d448b2818d842ac409, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1328
+      objectReference: {fileID: 0}
     - target: {fileID: 7177969830845784532, guid: 84f66c8bd4a0d5d448b2818d842ac409, type: 3}
       propertyPath: _defaultAnimation
       value: 
@@ -115,8 +119,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _initLife: 8
-  _spriteRenderer: {fileID: 1006063252815887824}
+  _doDamageOnTouch: 0
+  _damage: 0
+  _bodySpriteRenderer: {fileID: 1006063252815887824}
+  _headSpriteRenderer: {fileID: 0}
   _selfTransform: {fileID: 2203059577036396502}
+  _damageColorTimer: 0.1
   _wallLayer:
     serializedVersion: 2
     m_Bits: 128

@@ -20,7 +20,7 @@ namespace Entities.Enemies
             Vector2 dir = _selfTransform.position - _player.transform.position;
             dir.Normalize();
 
-            _spriteRenderer.flipX = dir.x > 0;
+            _bodySpriteRenderer.flipX = dir.x > 0;
 
             if (Math.Abs(dir.x) > 0.5f)
             {

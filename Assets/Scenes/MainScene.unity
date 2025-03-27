@@ -3053,6 +3053,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7354367037668203066, guid: 291d5e76c73c3f740b927a4b791c9b0d, type: 3}
+      propertyPath: _enemySpawnChance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354367037668203066, guid: 291d5e76c73c3f740b927a4b791c9b0d, type: 3}
       propertyPath: _debugNodePosition
       value: 0
       objectReference: {fileID: 0}

@@ -104,6 +104,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Gaper
       objectReference: {fileID: 0}
+    - target: {fileID: 6776409240741530162, guid: 84f66c8bd4a0d5d448b2818d842ac409, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0113
+      objectReference: {fileID: 0}
     - target: {fileID: 7177969830845784532, guid: 84f66c8bd4a0d5d448b2818d842ac409, type: 3}
       propertyPath: _defaultAnimation
       value: 
@@ -252,7 +256,8 @@ MonoBehaviour:
   _initLife: 10
   _doDamageOnTouch: 1
   _damage: 1
-  _spriteRenderer: {fileID: 6677323721786711658}
+  _bodySpriteRenderer: {fileID: 6677323721786711658}
+  _headSpriteRenderer: {fileID: 799097588280365708}
   _selfTransform: {fileID: 5750543385908622444}
   _damageColorTimer: 0.1
   _speed: 0.7
