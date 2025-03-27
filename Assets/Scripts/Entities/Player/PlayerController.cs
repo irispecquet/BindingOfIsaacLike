@@ -14,7 +14,6 @@ namespace Entities.Player
         [SerializeField] private InputsHandler _inputs;
         [SerializeField] private PlayerView _playerView;
         [SerializeField] private Rigidbody2D _rigidbody;
-        [SerializeField] private TMP_Text _debugStateText;
         [SerializeField] private Bullet _bulletPrefab;
 
         [Header("Values")] 
@@ -122,8 +121,6 @@ namespace Entities.Player
         
             _currentState = newState;
             _currentState.EnterState();
-        
-            _debugStateText.text = _currentState.ToString();
         }
 
         public Vector2 GetVelocity()

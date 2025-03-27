@@ -24,14 +24,7 @@ namespace Rooms
         private void Start()
         {
             _player = GameManager.Instance.PlayerController;
-            _player.DieEvent += OnPlayerDied;
-
             ChangeRoom(_startingRoom, _startingRoom.transform.position);
-        }
-
-        private void OnPlayerDied(Entity player)
-        {
-            Debug.Log("Player died!");
         }
 
         public async void ChangeRoom(Room room, Vector3 playerPosition)

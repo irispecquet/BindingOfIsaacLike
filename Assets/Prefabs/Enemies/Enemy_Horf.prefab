@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4575956316299333938, guid: 84f66c8bd4a0d5d448b2818d842ac409, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.107
       objectReference: {fileID: 0}
     - target: {fileID: 6342237248864220839, guid: 84f66c8bd4a0d5d448b2818d842ac409, type: 3}
       propertyPath: m_Name
@@ -100,8 +100,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _initLife: 10
+  _doDamageOnTouch: 0
+  _damage: 0
   _spriteRenderer: {fileID: 1551681066219465397}
   _selfTransform: {fileID: 498839099090206899}
+  _damageColorTimer: 0.1
 --- !u!114 &7202787463703619913
 MonoBehaviour:
   m_ObjectHideFlags: 0

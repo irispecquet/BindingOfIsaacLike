@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4173548451393636599, guid: 84f66c8bd4a0d5d448b2818d842ac409, type: 3}
       propertyPath: m_Radius
-      value: 0.16
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 4173548451393636599, guid: 84f66c8bd4a0d5d448b2818d842ac409, type: 3}
       propertyPath: m_Offset.y
-      value: 0.1
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 6342237248864220839, guid: 84f66c8bd4a0d5d448b2818d842ac409, type: 3}
       propertyPath: m_Name
@@ -147,6 +147,7 @@ MonoBehaviour:
   _damage: 1
   _spriteRenderer: {fileID: 6677323721786711658}
   _selfTransform: {fileID: 5750543385908622444}
+  _damageColorTimer: 0.1
   _speed: 0.4
   _pathUpdateInterval: 0.6
   _bodyAnimator: {fileID: 6494155372444742410}

@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3902873135899738702}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.055, z: 0}
+  m_LocalPosition: {x: 0, y: 0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 64df7f9d302203e46a922e0b7ee2172d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &4772465393661862635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +133,7 @@ Transform:
   m_GameObject: {fileID: 3992302283960685290}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -179,7 +179,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingOrder: 0
   m_Sprite: {fileID: 1782850304, guid: 7c15e9145b7f5034f97ab054f3055b65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -190,7 +190,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &6047911429592287339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,6 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8546095965318641572}
   - component: {fileID: 438169314386464978}
+  - component: {fileID: 9191056073667295571}
   m_Layer: 6
   m_Name: PlayerView
   m_TagString: Untagged
@@ -261,6 +262,18 @@ MonoBehaviour:
   _headSpriteRenderer: {fileID: 2751142635880110431}
   _bodySpriteRenderer: {fileID: 8591872207173044239}
   _playerController: {fileID: 1739287942229850306}
+--- !u!210 &9191056073667295571
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8414228333927495921}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &8627268710521560496
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +327,6 @@ MonoBehaviour:
   _inputs: {fileID: 0}
   _playerView: {fileID: 438169314386464978}
   _rigidbody: {fileID: 5596355873088195995}
-  _debugStateText: {fileID: 0}
   _bulletPrefab: {fileID: 4778595488043172221, guid: ddbd1170bd0e87d4fb490a815501dd52, type: 3}
   _speed: 1.4
   _acceleration: 9
@@ -379,6 +391,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.08}
+  m_Offset: {x: 0, y: 0.09}
   serializedVersion: 2
   m_Radius: 0.09

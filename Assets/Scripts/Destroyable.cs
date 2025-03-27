@@ -20,7 +20,7 @@ public class Destroyable : Entity
     {
         base.Hit(damage);
         
-        if(_spriteIndex < _sprites.Length - 1)
+        if(_spriteIndex < _sprites.Length)
             _spriteRenderer.sprite = _sprites[_spriteIndex++];
     }
 

@@ -1,5 +1,5 @@
 TO DO :
-- Eviter collision entre ennemis (tile où ils sont doit être occupée)
+- éviter collision entre ennemis
 - autres obstacles
 - qlq items ?
 
