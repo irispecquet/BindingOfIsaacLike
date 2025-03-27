@@ -1,6 +1,7 @@
 using System;
 using Entities.Player.States;
 using Interfaces;
+using Items;
 using Managers;
 using Rooms;
 using TMPro;
@@ -77,6 +78,14 @@ namespace Entities.Player
             _currentState.FixedUpdateState();
         }
 
+        protected override void OnTriggerEnter2D(Collider2D other)
+        {
+            base.OnTriggerEnter2D(other);
+
+            if (other.TryGetComponent(out PickUp item))
+                item.Pick(this);
+        }
+
         #endregion // UNITY METHODS
 
         private void HandleShooting()
@@ -136,6 +145,12 @@ namespace Entities.Player
                 RefreshLife?.Invoke(_currentLife);
                 _damageTimer = _damageCooldown;
             }
+        }
+
+        public override void Heal(int value)
+        {
+            base.Heal(value);
+            RefreshLife?.Invoke(_currentLife);
         }
 
         protected override void Die()

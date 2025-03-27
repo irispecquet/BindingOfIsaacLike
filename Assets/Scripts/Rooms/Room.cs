@@ -25,8 +25,9 @@ namespace Rooms
         [SerializeField] private Door[] _roomDoors;
         [SerializeField] private CameraFollowProperties _cameraFollowProperties;
 
-        [Header("Enemies")] 
+        [Header("Pools")] 
         [SerializeField] private GameObject[] _enemyTypePool;
+        [SerializeField] private GameObject[] _obstacleTypePool;
         
         public RoomNode[,] Nodes { get; private set; }
         public bool IsSet { get; private set; }
@@ -56,7 +57,7 @@ namespace Rooms
                 {
                     float xPosition = _gridParent.position.x + x * _nodeSize.x;
                     float yPosition = _gridParent.position.y + y * _nodeSize.y;
-
+                    
                     int randomOccupied = Random.Range(0, 100);
                     int randomEnemy = Random.Range(0, 100);
 
@@ -73,7 +74,10 @@ namespace Rooms
                     }
 
                     if (occupied)
-                        Instantiate(_poopPrefab, new Vector3(xPosition, yPosition, 0), Quaternion.identity, transform);
+                    {
+                        GameObject newObstacle = _obstacleTypePool.RandomElement();
+                        Instantiate(newObstacle, new Vector3(xPosition, yPosition, 0), Quaternion.identity, transform);
+                    }
 
                     if (enemy)
                     {

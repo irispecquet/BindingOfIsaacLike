@@ -15,6 +15,6 @@ MonoBehaviour:
   <AnimationName>k__BackingField: Idle
   <Sprites>k__BackingField:
   - {fileID: 338951629, guid: 10607119d6ecff640b2968688684069a, type: 3}
-  - {fileID: -1349340127, guid: 10607119d6ecff640b2968688684069a, type: 3}
+  - {fileID: -1045087459, guid: 10607119d6ecff640b2968688684069a, type: 3}
   <FramePerSeconds>k__BackingField: 34
   <AnimationType>k__BackingField: 0

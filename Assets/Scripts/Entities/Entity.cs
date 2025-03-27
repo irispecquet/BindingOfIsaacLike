@@ -18,16 +18,28 @@ namespace Entities
         public RoomNode CurrentRoomNode { get; private set; }
 
         protected int _currentLife;
+        private int _maxLife;
 
         protected virtual void Start()
         {
             _currentLife = _initLife;
+            _maxLife = _initLife;
             RefreshCurrentRoomNode();
         }
 
         protected virtual void Update()
         {
             RefreshCurrentRoomNode();
+        }
+        
+        protected virtual void OnTriggerEnter2D(Collider2D other)
+        {
+            ApplyDamage(other);
+        }
+
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            ApplyDamage(other);
         }
 
         protected virtual void TakeDamage(int damage)
@@ -44,6 +56,12 @@ namespace Entities
         {
             _currentLife = value;
         }
+        
+        public virtual void Heal(int value)
+        {
+            int newLife = _currentLife + value > _maxLife ? _maxLife : _currentLife + value;
+            SetLife(newLife);
+        }
 
         protected virtual void Die()
         {
@@ -53,16 +71,6 @@ namespace Entities
         public virtual void Hit(int damage)
         {
             TakeDamage(damage);
-        }
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            ApplyDamage(other);
-        }
-
-        private void OnTriggerStay2D(Collider2D other)
-        {
-            ApplyDamage(other);
         }
 
         private void ApplyDamage(Collider2D other)
