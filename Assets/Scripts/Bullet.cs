@@ -42,7 +42,7 @@ public class Bullet : MonoBehaviour, IHitter
         if (_currentLifeTime <= 0)
             DestroyBullet();
         
-        transform.Translate(_direction * (_speed * Time.fixedDeltaTime));
+        transform.Translate(_direction * (_speed * Time.deltaTime));
     }
 
     private void OnTriggerEnter2D(Collider2D other)

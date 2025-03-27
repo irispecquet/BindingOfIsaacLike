@@ -147,10 +147,14 @@ namespace Entities.Player
             }
         }
 
-        public override void Heal(int value)
+        public override bool TryHeal(int value)
         {
-            base.Heal(value);
-            RefreshLife?.Invoke(_currentLife);
+            bool tryHeal = base.TryHeal(value);
+            
+            if(tryHeal)
+                RefreshLife?.Invoke(_currentLife);
+
+            return tryHeal;
         }
 
         protected override void Die()

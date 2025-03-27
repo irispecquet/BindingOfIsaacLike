@@ -6,11 +6,10 @@ namespace Items
     public class Healer : PickUp
     {
         [SerializeField] private int _healValue;
-        
-        protected override void Interact(PlayerController player)
+
+        protected override bool TryInteract(PlayerController player)
         {
-            base.Interact(player);
-            player.Heal(_healValue);
+            return player.TryHeal(_healValue);
         }
     }
 }

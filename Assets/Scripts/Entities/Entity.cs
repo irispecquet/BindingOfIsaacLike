@@ -57,10 +57,15 @@ namespace Entities
             _currentLife = value;
         }
         
-        public virtual void Heal(int value)
+        public virtual bool TryHeal(int value)
         {
+            if(_currentLife >= _maxLife)
+                return false;
+            
             int newLife = _currentLife + value > _maxLife ? _maxLife : _currentLife + value;
             SetLife(newLife);
+
+            return true;
         }
 
         protected virtual void Die()

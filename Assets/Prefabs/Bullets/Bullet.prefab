@@ -185,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator2D: {fileID: 4487656000278685071}
   _collider: {fileID: 1934091487768506517}
-  _speed: 0.3
+  _speed: 1.3
   _damage: 0
   _lifeTime: 1
 --- !u!50 &-2171347873013268149

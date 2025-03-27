@@ -9,12 +9,13 @@ namespace Items
         
         public void Pick(PlayerController player)
         {
-            Interact(player);
-            Destroy(_selfTransform.gameObject);
+            if(TryInteract(player))
+                Destroy(_selfTransform.gameObject);
         }
 
-        protected virtual void Interact(PlayerController player)
+        protected virtual bool TryInteract(PlayerController player)
         {
+            return true;
         }
     }
 }
